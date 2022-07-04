@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/198814e2e3.js" crossorigin="anonymous"></script>
+  
+  <title>Social media app</title>
+</head>
+
+<body>
+  <header>
+    <button class="small-btn" onclick="refresh()">Refresh</button>
+    <button class="small-btn" onclick="clearData()">Clear Data</button>
+    Change user:
+    <select name="" id="chng-user" onclick="changeUser()">
+    </select>
+  </header>
+
+  <main id="p0" class="post-box">
+    <div class="comments">
+      <div class="post-box" id="c1">
+        <div class="post cmmnt">
+          <a href="#" class="avtr">
+            <img src="./images/avatars/image-amyrobson.png">
+          </a>
+          <span class="usrnme-box">
+            <a href="#" class="usrnme">amyrobson</a>
+          </span>
+          <a class="post-date">1 month ago</a>
+          <p class="post-main">Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.</p>
+          <span class="votes">
+            <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+            <span class="score">12</span>
+            <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+          </span>
+          <button class="small-btn reply" type="button" onclick="createPostForm('c1')">
+            <i class="fa-solid fa-reply"></i>Reply </button>
+        </div>
+      </div>
+
+      <div class="post-box" id="c2">
+        <div class="post cmmnt">
+          <a href="#" class="avtr">
+            <img src="./images/avatars/image-maxblagun.png">
+          </a>
+          <span class="usrnme-box">
+            <a href="#" class="usrnme">maxblagun</a>
+          </span>
+          <a class="post-date">2 weeks ago</a>
+          <p class="post-main">Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</p>
+          <span class="votes">
+            <button class="vote-btn" type="button" onclick="addScore('c2', 1)">+</button>
+            <span class="score">5</span>
+            <button class="vote-btn" type="button" onclick="addScore('c2', -1)">−</button>
+          </span>
+          <button class="small-btn reply" type="button" onclick="createPostForm('c2')">
+            <i class="fa-solid fa-reply"></i>Reply </button>
+        </div>
+
+        <div class="replies">
+          <div class="post-box" id="r3">
+            <div class="post cmmnt reply">
+              <a href="#" class="avtr">
+                <img src="./images/avatars/image-ramsesmiron.png">
+              </a>
+              <span class="usrnme-box">
+                <a href="#" class="usrnme">ramsesmiron</a>
+              </span>
+              <a class="post-date">1 week ago</a>
+              <p class="post-main">If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.</p>
+              <span class="votes">
+                <button class="vote-btn" type="button" onclick="addScore('r3', 1)">+</button>
+                <span class="score">4</span>
+                <button class="vote-btn" type="button" onclick="addScore('r3', -1)">−</button>
+              </span>
+              <button class="small-btn reply" type="button" onclick="createPostForm('r3')">
+                <i class="fa-solid fa-reply"></i>Reply </button>
+            </div>
+
+            <div class="post form create cmmnt reply">
+              <a href="#" class="avtr">
+                <img src="./images/avatars/image-juliusomo.png">
+              </a>
+              <button type="submit" name="send-reply" class="big-btn" onclick="createPost(this)">REPLY</button>
+              <textarea placeholder="Send a reply..."></textarea>
+            </div>
+
+          </div>
+
+          <div class="post-box" id="r4">
+            <div class="post cmmnt reply form updt">
+              <a href="#" class="avtr">
+                <img src="./images/avatars/image-juliusomo.png">
+              </a>
+              <span class="usrnme-box">
+                <a href="#" class="usrnme">juliusomo</a>
+                <a class="user-role">you</a>
+              </span>
+              <a class="post-date">2 days ago</a>
+              <p class="post-main">I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.</p>
+              <span class="votes">
+                <button class="vote-btn" type="button" onclick="addScore('r4', 1)">+</button>
+                <span class="score">2</span>
+                <button class="vote-btn" type="button" onclick="addScore('r4', -1)">−</button>
+              </span>
+              <button class="small-btn del" type="button" onclick="trigDelModal('r4')">
+                <i class="fa-solid fa-trash"></i>Delete </button>
+              <button class="small-btn edit" type="button" onclick="createEditForm('r4')">
+                <i class="fa-solid fa-pen"></i>Edit </button>
+              <button type="submit" class="small-btn cncl" onclick="closeEditForm()">Cancel</button>
+              <button type="submit" class="big-btn" onclick="updatePost('r4')">UPDATE</button>
+              <textarea></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post form create cmmnt">
+      <a href="#" class="avtr">
+        <img src="./images/avatars/image-juliusomo.png">
+      </a>
+      <button type="submit" name="send-reply" class="big-btn" onclick="createPost(this)">SEND</button>
+      <textarea placeholder="Add a comment..."></textarea>
+    </div>
+  </main>
+  
+
+  <div class="modal-bg" id="del-modal">
+    <div class="modal del">
+       <h3>Delete comment</h3>
+       <p>
+       Are you sure you want to delete this comment? This will remove the comment and can't be undone.
+       </p>
+       <button type="button" class="big-btn no" onclick="closeDelModal()">NO, CANCEL</button>
+       <button type="button" class="big-btn yes">YES, DELETE</button>
+    </div>
+ </div>
+
+  <!-- <script src="./data.js"></script>
+  <script src="./main.js"></script> -->
+</body>
+</html>

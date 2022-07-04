@@ -1,0 +1,91 @@
+June 7, 2022 - Day 1
+Initial commit.
+Goal: Finish the UI today.
+Result: Far from finished.
+Time: 4.62 hours
+
+June 8, 2022 - Day 2
+Goal: Finish the UI today. For real.
+Result: Almost done, but I realized there is still a modal. Maybe it's about 70%.
+Also, it took me a long time trying to figure out the optimal design the nesting with consistent 16px gaps. Also the indicator line. Well, it turns out that flex is the way.
+Time: 5.93 hours
+
+June 9, 2022 - Day 3
+Goal: Finish the UI today. For real.
+Result: Almost done. There is still the media queries to worry about. I was not able to code much because of certain engagements. I finished the hover and focus states, the modal design, refinements of some fonts and margins, finished other grid layouts. The last thing, I think, is the media query for desktop, and I'm ready to move to JavaScript part.
+I also learned some tricks about svg because I needed to modify the hover and focus states of some svg images. I learned that this can easily be done by optimizing the svg first, then adding the code as inline svg. However, this can be really messy in code, so there are certain tricks to help. For example, adding the svg code using php. There is also the object tag. I bookmarked the links in the browser. Check it.
+Time: 4.15 hours
+
+June 10, 2022 - Day 4
+Background: Alright. I checked the UI, and there are still many things to do for the UI, like reply forms.
+Result: Still need to finish the Update Comment form layout. Too many layout! I was not able to code much?
+Time: 5.33 hours
+
+June 11, 2022  - Day 5
+Result: I think the UI is finished. Yay! Well, I had some html structuring on the UI, particularly on the edit comment form. Initially I used a form tag, but then the initial structure of the comment box can be easily used for the edit comment form. So I scrapped the form tag, and added some handy classes to handle the situation. It turned out much cleaner!
+Time: 3.67 hours
+
+June 13, 2022
+Goal: 
+Understand the methods of fetching data. If I work on a web-based environment (thanks to Live Server extension), I can easily use the fetch() method. However, I am not sure if I can use localStorage with that.
+If I work on a local environment, it will be difficult to do the file handling, but I can use localStorage for that. Let's see.
+When data is already loaded, I need to organize it properly to appear on the screen. Alright.
+Result:
+I learned some quirks in localStorage. Seems like it works best for Firefox. I also was able to create a sample create function. I still need refinement.
+Time: 6.28 hours
+
+June 14, 2022
+Goal:
+Need to fetch and create post.
+Result:
+The script can now fetch data. Now, I need a way to read comments and show them on screen.
+Time: 3.03 hours
+
+June 15, 2022
+Result: I can already read the comments and show them on screen. Up next, I am gonna fix the structure of the comment content, form, and replies. I already figured it out on my notebook. Let's go!
+Time: 3.08 hours
+
+June 16, 2022
+I figured out that I need to restructure the data. It's just difficult to locate the parents of the parents of a nested reply through the current format. I added a property called parentId in each comment (or post), to easily map the parent.
+Reading and creating new posts are already done!
+
+Updating is also done! Need to clean up my code. Kinda messy. Still deciding if I will do the "read" separately from "update". "Read" means showing it on the HTML.
+Time: 8.22 hours
+
+June 17, 2022 - NEED TO FINISH THIS. 
+The resturcturing of the data gave some difficulties for the deleting function. Basically, it can be difficult to delete child comments. Need to add that property.
+
+I was thinking, what's wrong with the original structure? I looked back, and found that the difficulty is in the updating of the the data. It's difficult to traverse toward a post id, when I have to go through all its ancestors.
+
+Further thinking gave me a good answer that my decision was right. I have a fix for the delete function! Result: Works nice.
+
+Need more commenting on my code, to give more understanding.
+
+Scoring is also working. Pretty much done. Just need a mechanism to change users.
+Time: 4.55 hours
+
+June 19, 2022
+Changing users is also done.
+Time: 1.32 hours
+
+June 20, 2022
+Hover works bad on mobile. It gets stuck in hover state. I researched and experimented, and I was able to create a touch ripple effect for the button. I scrapped it, though, because it seems too much. I need to check better alternatives.
+Time: 2 hours
+
+June 20, 2022
+The goal is to cap the votes based on user credentials. Next time.
+
+June 22, 2022
+I need to think about width devices less than 320px, like the Galaxy Fold. How can I use wrapping in flex and grid to make the layout conform to that super small width?
+
+June 24, 2022
+UI - I think the extra space on the bottom of the card is due to the hidden edit buttons.
+Suggestions from the community:
+Icons (reply, edit, and delete) are not aligned vertically with text
+You don't get the @username tag when replying to someone
+Likes should be limited to one only per comment
+Cancel button when editing won't work
+UX suggestion: autofocus input when clicking Reply
+UI suggestion: some animation when posting would be nice to the eyes
+Feature suggestion: autolike your own comment when posting
+if you start nesting replies, you end up getting most of the text cut off by the 3rd or 4th reply. I'd recommend just adding in some logic to keep the comment card from getting too small. 
