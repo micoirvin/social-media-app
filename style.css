@@ -9,30 +9,34 @@
 
 :root {
     /* primary colors */
-    --m-blue: hsl(238, 40%, 52%);
-    --soft-red: hsl(358, 79%, 66%);
-    --l-gray-blue: hsl(239, 57%, 85%);
-    --pale-red: hsl(357, 100%, 86%);
+    --blue500: #5457b6;
+    --blue200: #c3c4ef;
+    
+    --red500: #ed6468;
+    --red200: #ffb8bb;
 
-    /* neutral colors */
-    --d-blue: hsl(212, 24%, 26%); /* user name */
-    --vl-gray: hsl(228, 33%, 97%); /* bg */
-    /* --l-gray: hsl(223, 19%, 93%); based on the style guide */
-    --gray-blue: hsl(211, 10%, 45%); /* text */
-    /* --l-gray: hsl(228, 12%, 92%); for lines . seems better */
-    --l-gray: #e0e0f0;
-    --l-gray-l-blue: hsl(212, 7%, 64%);
+    --gray100: #eeeef6;
+    --gray200: #e0e0f0;
+    --gray300: #90959b;
+    --gray400: #4d535a;
+    --gray500: #333d4e;
+
 }
 
 body {
-    background-color: #eeeef6;
-    color: var(--gray-blue);
+    background-color: var(--gray100);
+    color: var(--gray400);
     font-family: Rubik, Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    font-size: max(1rem, 0.444vw + 0.6rem); /*fluid typography for large screens*/
+    /* font-size: max(1rem, 0.444vw + 0.6rem); fluid typography for large screens */
     --scalerem: calc((100vw - 375em/16) / (768/16 - 375/16));
     --scalerpx: calc((100vw - 375px) / (768 - 375));
     padding-bottom: 300px;
+}
+
+p {
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    line-height: 150%;
 }
 
 main.post-box {
@@ -48,16 +52,13 @@ main.post-box {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    /* gap: clamp(16px, 16px + var(--scalerpx)*4, 20px); */
 }
 
 .post-box {
     padding-left: 16px;
-    padding-left: clamp(16px, var(--scalerpx)*40, 40px);
     display: flex;
     flex-direction: column;
     gap: 8px;
-    /* gap: clamp(16px, 16px + var(--scalerpx)*4, 20px); */
 }
 
 .comments > .post-box {
@@ -66,12 +67,11 @@ main.post-box {
 
 .post {
     padding: 16px;
-    padding: clamp(16px, 16px + var(--scalerpx)*8, 24px);
-    display: grid;
-    grid-template-columns: 2em auto 1fr auto auto;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
     border-radius: 8px;
-    align-items: center;
     background-color: white;
 }
 
@@ -84,22 +84,28 @@ main.post-box {
 }
 
 .post.form.create.cmmnt.reply {
-    order: 2;
-    margin-top: -8px;
+    order: 3;
+    margin-left: 16px; /* change? */
 }
 
 .replies {
     order: 3;
-    /* margin-left: clamp(0px, 40*var(--scalerpx), 40px); */
-    margin-left: 16px;
+    /* margin-left: 16px; */
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    gap: clamp(16px, 16px + var(--scalerpx)*4, 20px);
-    border-left: 2px solid var(--l-gray);
+    gap: 8px;
+    border-left: 2px solid var(--gray200);
 }
 
 /* ********** COMMENT BOX  ************************** */
+
+.post-headr, .post-footr {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+}
 
 a {
     text-decoration: none;
@@ -107,13 +113,11 @@ a {
 }
 
 a.avtr {
-    width: 2em;
-    height: 2em;
+    width: 2rem;
+    height: 2rem;
     display: block;
-    grid-column: 1;
-    grid-row: 1;
-    border-radius: 20em;
-    background-color: var(--pale-red);
+    border-radius: 20rem;
+    background-color: var(--red200);
 }
 
 a.avtr img {
@@ -123,26 +127,24 @@ a.avtr img {
 span.usrnme-box {
     width: min-content;
     display: flex;
-    gap: 8px;
-    grid-column: 2;
-    grid-row: 1;
+    gap: 6px;
 }
 
 a.usrnme {
-    color: var(--d-blue);
+    color: var(--gray500);
     font-weight: 500;
 }
 
 a.user-role {
     padding: 2px 6px;
     font-size: 0.8em;
-    background-color: var(--m-blue);
+    background-color: var(--blue500);
     color: white;
     border-radius: 2px;
 }
 
 a.user-role:active {
-    background-color: var(--l-gray-blue);
+    background-color: var(--blue200);
 }
 
 a:is(.usrnme, .post-date):active {
@@ -151,29 +153,16 @@ a:is(.usrnme, .post-date):active {
 
 a.post-date {
     display: block;
-    grid-column: 3 / -1;
-    grid-row: 1;
-}
-
-p {
-    line-height: 150%;
-}
-
-.post-main {
-    grid-column: 1 / -1;
-    grid-row: 2;
 }
 
 span.votes {
-    width: fit-content;
-    min-height: 40px;
+    /* width: fit-content; don't erase yet. might need for vertical layout*/
+    min-height: 32px;
     padding: 0px 4px;
     display: flex;
     align-items: center;
     gap: 4px;
-    grid-column: 1 / -1;
-    grid-row: 3;
-    background-color: var(--vl-gray);
+    background-color: var(--gray100);
     text-align: center;
     border-radius: 12px;
 }
@@ -181,15 +170,15 @@ span.votes {
 span.score {
     padding: 4px;
     display: block;
-    color: var(--m-blue);
+    color: var(--blue500);
     font-weight: 500;
 }
 
 button {
-    font-size: 1em;
+    font-size: 0.9rem;
     font-family: Rubik, Arial, Helvetica, sans-serif;
     background-color: transparent;
-    border: 0.1px solid transparent;
+    border: none;
     outline: none;
     box-sizing: border-box;
     cursor: pointer;
@@ -202,38 +191,22 @@ button {
     line-height: 85%;
     font-size: 1.2em;
     font-weight: 700;
-    color: var(--l-gray-blue);
+    color: var(--blue200);
 }
 
 .vote-btn:active {
-    color: var(--m-blue);
+    color: var(--blue500);
 }
 
 .small-btn {
     width: fit-content; /* Should I delete this? Check in the modal*/
     display: block;
     font-weight: 500;
-    color: var(--m-blue);
+    color: var(--blue500);
 }
 
 .small-btn:active {
-    color: var(--l-gray-blue);
-}
-
-.small-btn.del {
-    grid-column: 1 / -2;
-    grid-row: 3;
-    justify-self: end;
-    color: var(--soft-red);
-}
-
-.small-btn.del:active {
-    color: var(--pale-red);
-}
-
-.small-btn.reply, .small-btn.edit {
-    grid-column: -2 / -1;
-    grid-row: 3;
+    color: var(--blue200);
 }
 
 .post:not(.form) :is(.big-btn, .small-btn.cncl, textarea) {
@@ -247,81 +220,58 @@ button {
 
 /* ********** COMMENT FORM  ***************************** */
 
-.post.form.create {
-    grid-template-columns: 1fr 1fr;
-}
-
-.post.form.create a.avtr {
-    grid-column: 1;
-    grid-row: 2;
-}
-
 .post.form textarea {
     width: 100%;
     min-height: 6em;
-    padding: 16px 24px;
+    padding: 12px;
     background-color: white;
-    resize: none;
+    resize: vertical;
     font-size: 1em;
-    font-family: Rubik, Arial, Helvetica, sans-serif;
+    font-family: Lato, Arial, Helvetica, sans-serif;
     border-radius: inherit;
-    border: 1px solid var(--l-gray);
-}
-
-.post.form.create textarea {
-    grid-column: 1 / -1;
-    grid-row: 1;
+    border: 1px solid var(--gray200);
 }
 
 .post.form textarea:is(:focus, :hover) {
-    outline: 1px solid var(--m-blue);
+    outline: 1px solid var(--blue500);
 }
 
 .big-btn {
-    min-width: 104px;
-    padding: 16px;
-    background-color: var(--m-blue);
+    min-width: 72px;
+    padding: 12px;
+    background-color: var(--blue500);
     color: white;
     text-align: center;
     font-weight: 500;
     border-radius: 8px;
 }
 
-.post.form.create .big-btn {
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: end;
+.post.form.create .post-footr {
+    justify-content: space-between;
 }
 
 .big-btn:active {
-    background-color: var(--l-gray-blue);
+    background-color: var(--blue200);
 }
 
 /* ************ UPDATE COMMENT FORM *********************** */
-
-.post.form.updt textarea {
-    grid-column: 1 / -1;
-    grid-row: 2;
-}
 
 .post.form.updt .post-main {
     display: none;
 }
 
-.post.form.updt .small-btn.cncl {
-    grid-column: -4 / -3;
-    grid-row: 3;
-    justify-self: end;
-}
-
-.post.form.updt .big-btn {
-    grid-column: -3 / -1;
-    grid-row: 3;
-    justify-self: end;
-}
-
-.post.form.updt .small-btn:is(.del, .edit) {
+.post.form.updt :is(span.votes, .small-btn:is(.reply, .more)) {
     display: none;
+}
+
+.post.form.updt .post-footr {
+    justify-content: flex-end;
+}
+
+@media only screen and (min-width: 30rem) {
+    .replies {
+        margin-left: 16px;
+    }
 }
 
 /* ************** FOR 768px UP ********************************************* */
@@ -400,7 +350,7 @@ button {
 
 @media only screen and (min-width: 62em) {
     .big-btn:hover {
-        background-color: var(--l-gray-blue);
+        background-color: var(--blue200);
     }
     
     a:is(.usrnme, .post-date):hover {
@@ -408,27 +358,27 @@ button {
     }
 
     a.user-role:hover {
-        background-color: var(--l-gray-blue);
+        background-color: var(--blue200);
     }
 
     .vote-btn:hover {
-        color: var(--m-blue);
+        color: var(--blue500);
     }
 
     .small-btn:hover {
-        color: var(--l-gray-blue);
+        color: var(--blue200);
     }
 
     .small-btn.del:hover {
-        color: var(--pale-red);
+        color: var(--red200);
     }
 
     .modal.del .big-btn.no:hover{
-        background-color: var(--l-gray-l-blue);
+        background-color: var(--gray300);
     }
     
     .modal.del .big-btn.yes:hover{
-        background-color: var(--pale-red);
+        background-color: var(--red200);
     }
 }
 
@@ -463,8 +413,8 @@ h3 {
     margin-bottom: 1em;
     font-size: 1.4rem;
     font-size: clamp(1.3rem, 1.3rem + var(--scalerem)*0.2, 1.5rem);
-    font-weight: 500;
-    color: var(--d-blue);
+    font-weight: 700;
+    color: var(--gray500);
 }
 
 .modal h3 {
@@ -486,25 +436,25 @@ h3 {
 
 .modal.del .big-btn.no{
     grid-column: 1;
-    background-color: var(--gray-blue);
+    background-color: var(--gray400);
 }
 
 .modal.del .big-btn.no:active{
-    background-color: var(--l-gray-l-blue);
+    background-color: var(--gray300);
 }
 
 .modal.del .big-btn.yes{
     grid-column: 2;
-    background-color: var(--soft-red);
+    background-color: var(--red500);
 }
 
 .modal.del .big-btn.yes:active{
-    background-color: var(--pale-red);
+    background-color: var(--red200);
 }
 
 /* ********** EXTRAS ******************* */
 header {
-    color: var(--m-blue);
+    color: var(--blue500);
     height: 64px;
     display: flex;
     flex-wrap: wrap;
@@ -514,11 +464,11 @@ header {
 
 select {
     font-size: 1em;
-    font-family: Rubik, Arial, Helvetica, sans-serif;
+    font-family: Lato, Arial, Helvetica, sans-serif;
     background-color: transparent;
-    color: var(--d-blue);
+    color: var(--gray500);
     /* border: 0.1px solid transparent; */
-    border: 1px solid var(--d-blue);
+    border: 1px solid var(--gray500);
     outline: none;
     box-sizing: border-box;
     cursor: pointer;
@@ -526,3 +476,8 @@ select {
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); text-decoration: underline; }
+
+/* delete later */
+#c2 {
+    display: none;
+}

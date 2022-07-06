@@ -6,7 +6,7 @@
   <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="https://kit.fontawesome.com/198814e2e3.js" crossorigin="anonymous"></script>
   
@@ -24,43 +24,112 @@
 
   <main id="p0" class="post-box">
     <div class="comments">
+
+
+
+      
       <div class="post-box" id="c1">
+        <!-- Start of first card -->
         <div class="post cmmnt">
-          <a href="#" class="avtr">
-            <img src="./images/avatars/image-amyrobson.png">
-          </a>
-          <span class="usrnme-box">
-            <a href="#" class="usrnme">amyrobson</a>
-          </span>
-          <a class="post-date">1 month ago</a>
-          <p class="post-main">Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.</p>
-          <span class="votes">
-            <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
-            <span class="score">12</span>
-            <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
-          </span>
-          <button class="small-btn reply" type="button" onclick="createPostForm('c1')">
-            <i class="fa-solid fa-reply"></i>Reply </button>
+
+          <div class="post-headr">
+            <a href="#" class="avtr">
+              <img src="./images/avatars/image-amyrobson.png">
+            </a>
+            <span class="usrnme-box">
+              <a href="#" class="usrnme">amyrobson</a>
+            </span>
+            <a class="post-date">1 month ago</a>
+          </div>
+
+          <p class="post-main">Impressive!</p>
+
+          <div class="post-footr">
+            <span class="votes">
+              <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+              <span class="score">12</span>
+              <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+            </span>
+            <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+            <button class="small-btn more">...</button>
+          </div>
+
         </div>
       </div>
 
+      <div class="post-box">
+        <!-- Start of second card -->  
+        <div class="post form create cmmnt reply">
+          <textarea placeholder="Send a reply..."></textarea>
+
+          <div class="post-footr">
+            <a href="#" class="avtr">
+              <img src="./images/avatars/image-juliusomo.png">
+            </a>
+            <button type="submit" class="big-btn" onclick="createPost(this)">REPLY</button>
+          </div>
+
+        </div>
+        
+        <div class="post cmmnt reply form updt">
+
+          <div class="post-headr">
+            <a href="#" class="avtr">
+              <img src="./images/avatars/image-juliusomo.png">
+            </a>
+            <span class="usrnme-box">
+              <a href="#" class="usrnme">juliusomo</a>
+              <a class="user-role">you</a>
+            </span>
+            <a class="post-date">2 days ago</a>
+          </div>
+
+          <p class="post-main">I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.</p>
+        
+          <textarea></textarea>
+
+          <div class="post-footr">
+            <span class="votes">
+              <button class="vote-btn" type="button" onclick="addScore('r4', 1)">+</button>
+              <span class="score">2</span>
+              <button class="vote-btn" type="button" onclick="addScore('r4', -1)">−</button>
+            </span> 
+            <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+            <button class="small-btn more">...</button>
+            <!-- <button class="small-btn del" type="button" onclick="trigDelModal('r4')">
+              <i class="fa-solid fa-trash"></i>Delete </button>
+            <button class="small-btn edit" type="button" onclick="createEditForm('r4')">
+              <i class="fa-solid fa-pen"></i>Edit </button> -->
+            <button type="submit" class="small-btn cncl" onclick="closeEditForm()">Cancel</button>
+            <button type="submit" class="big-btn" onclick="updatePost('r4')">SAVE</button>
+          </div>
+
+        </div>
+
+      </div>
+<!-- --------------------------------------------------- -->
+
       <div class="post-box" id="c2">
         <div class="post cmmnt">
-          <a href="#" class="avtr">
-            <img src="./images/avatars/image-maxblagun.png">
-          </a>
-          <span class="usrnme-box">
-            <a href="#" class="usrnme">maxblagun</a>
-          </span>
-          <a class="post-date">2 weeks ago</a>
+          <div class="post-headr">
+            <a href="#" class="avtr">
+              <img src="./images/avatars/image-maxblagun.png">
+            </a>
+            <span class="usrnme-box">
+              <a href="#" class="usrnme">maxblagun</a>
+            </span>
+            <a class="post-date">2 weeks ago</a>
+          </div>
           <p class="post-main">Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</p>
-          <span class="votes">
-            <button class="vote-btn" type="button" onclick="addScore('c2', 1)">+</button>
-            <span class="score">5</span>
-            <button class="vote-btn" type="button" onclick="addScore('c2', -1)">−</button>
-          </span>
-          <button class="small-btn reply" type="button" onclick="createPostForm('c2')">
-            <i class="fa-solid fa-reply"></i>Reply </button>
+          <div class="post-headr">
+            <span class="votes">
+              <button class="vote-btn" type="button" onclick="addScore('c2', 1)">+</button>
+              <span class="score">5</span>
+              <button class="vote-btn" type="button" onclick="addScore('c2', -1)">−</button>
+            </span>
+            <button class="small-btn reply" type="button" onclick="createPostForm('c2')">
+              Reply </button>
+          </div>
         </div>
 
         <div class="replies">
@@ -80,54 +149,122 @@
                 <button class="vote-btn" type="button" onclick="addScore('r3', -1)">−</button>
               </span>
               <button class="small-btn reply" type="button" onclick="createPostForm('r3')">
-                <i class="fa-solid fa-reply"></i>Reply </button>
+                Reply </button>
+            </div>
+
+            <div class="replies">
+              <div class="post-box">
+                <div class="post cmmnt reply form updt">
+                  <div class="post-headr">
+                    <a href="#" class="avtr">
+                      <img src="./images/avatars/image-juliusomo.png">
+                    </a>
+                    <span class="usrnme-box">
+                      <a href="#" class="usrnme">juliusomo</a>
+                      <a class="user-role">you</a>
+                    </span>
+                    <a class="post-date">2 days ago</a>
+                  </div>
+                  <p class="post-main">I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.</p>
+                
+                  <textarea></textarea>
+                  <div class="post-headr">
+                    <span class="votes">
+                      <button class="vote-btn" type="button" onclick="addScore('r4', 1)">+</button>
+                      <span class="score">2</span>
+                      <button class="vote-btn" type="button" onclick="addScore('r4', -1)">−</button>
+                    </span>
+                    <!-- <button class="small-btn del" type="button" onclick="trigDelModal('r4')">
+                      <i class="fa-solid fa-trash"></i>Delete </button>
+                    <button class="small-btn edit" type="button" onclick="createEditForm('r4')">
+                      <i class="fa-solid fa-pen"></i>Edit </button> -->
+                    <button type="submit" class="small-btn cncl" onclick="closeEditForm()">X</button>
+                    <button type="submit" class="big-btn" onclick="updatePost('r4')">OK</button>
+                  </div>
+                </div>
+              </div>
+              <div class="post-box">
+                <div class="post cmmnt">
+                  <div class="post-headr">
+                    <a href="#" class="avtr">
+                      <img src="./images/avatars/image-amyrobson.png">
+                    </a>
+                    <span class="usrnme-box">
+                      <a href="#" class="usrnme">amyrobson</a>
+                    </span>
+                    <a class="post-date">1 month ago</a>
+                  </div>
+                  <p class="post-main">Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.</p>
+                  <div class="post-headr">
+                    <span class="votes">
+                      <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                      <span class="score">12</span>
+                      <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                    </span>
+                    <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                    <button class="small-btn more">...</button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="post form create cmmnt reply">
-              <a href="#" class="avtr">
-                <img src="./images/avatars/image-juliusomo.png">
-              </a>
-              <button type="submit" name="send-reply" class="big-btn" onclick="createPost(this)">REPLY</button>
               <textarea placeholder="Send a reply..."></textarea>
+              <div class="post-headr">
+                <a href="#" class="avtr">
+                  <img src="./images/avatars/image-juliusomo.png">
+                </a>
+                <button type="submit" name="send-reply" class="big-btn" onclick="createPost(this)">REPLY</button>
+              </div>
             </div>
 
           </div>
 
           <div class="post-box" id="r4">
             <div class="post cmmnt reply form updt">
-              <a href="#" class="avtr">
-                <img src="./images/avatars/image-juliusomo.png">
-              </a>
-              <span class="usrnme-box">
-                <a href="#" class="usrnme">juliusomo</a>
-                <a class="user-role">you</a>
-              </span>
-              <a class="post-date">2 days ago</a>
+              <div class="post-headr">
+                <a href="#" class="avtr">
+                  <img src="./images/avatars/image-juliusomo.png">
+                </a>
+                <span class="usrnme-box">
+                  <a href="#" class="usrnme">juliusomo</a>
+                  <a class="user-role">you</a>
+                </span>
+                <a class="post-date">2 days ago</a>
+              </div>
+
               <p class="post-main">I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.</p>
-              <span class="votes">
-                <button class="vote-btn" type="button" onclick="addScore('r4', 1)">+</button>
-                <span class="score">2</span>
-                <button class="vote-btn" type="button" onclick="addScore('r4', -1)">−</button>
-              </span>
-              <button class="small-btn del" type="button" onclick="trigDelModal('r4')">
-                <i class="fa-solid fa-trash"></i>Delete </button>
-              <button class="small-btn edit" type="button" onclick="createEditForm('r4')">
-                <i class="fa-solid fa-pen"></i>Edit </button>
-              <button type="submit" class="small-btn cncl" onclick="closeEditForm()">Cancel</button>
-              <button type="submit" class="big-btn" onclick="updatePost('r4')">UPDATE</button>
+              
               <textarea></textarea>
+
+              <div class="post-headr">
+                <span class="votes">
+                  <button class="vote-btn" type="button" onclick="addScore('r4', 1)">+</button>
+                  <span class="score">2</span>
+                  <button class="vote-btn" type="button" onclick="addScore('r4', -1)">−</button>
+                </span>
+                <!-- <button class="small-btn del" type="button" onclick="trigDelModal('r4')">
+                  <i class="fa-solid fa-trash"></i>Delete </button>
+                <button class="small-btn edit" type="button" onclick="createEditForm('r4')">
+                  <i class="fa-solid fa-pen"></i>Edit </button> -->
+                <button type="submit" class="small-btn cncl" onclick="closeEditForm()">X</button>
+                <button type="submit" class="big-btn" onclick="updatePost('r4')">OK</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
 
     <div class="post form create cmmnt">
-      <a href="#" class="avtr">
-        <img src="./images/avatars/image-juliusomo.png">
-      </a>
-      <button type="submit" name="send-reply" class="big-btn" onclick="createPost(this)">SEND</button>
       <textarea placeholder="Add a comment..."></textarea>
+      <div class="post-headr">
+        <a href="#" class="avtr">
+          <img src="./images/avatars/image-juliusomo.png">
+        </a>
+        <button type="submit" name="send-reply" class="big-btn" onclick="createPost(this)">SEND</button>
+      </div>
     </div>
   </main>
   

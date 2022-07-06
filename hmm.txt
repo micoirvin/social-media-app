@@ -1,0 +1,19 @@
+docu
+readme
+progress log
+features
+
+
+readme = docu?
+
+
+summary
+
+overview
+
+features
+
+process
+- development log
+- learnings
+- resources

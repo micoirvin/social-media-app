@@ -1,0 +1,26 @@
+July 5, 2022
+Can't abandon :hover for small screens. What if your screen is actually desktop but the window is resized?
+User role is not centered vertically?
+
+< 480px: 
+16px margin-left
+3 levels
+icons
+
+>= 480px
+32px margin-left
+3 levels
+380px min width of one level
+
+100vw - 32 - 34*(n-1) >= 380
+
+< 480px:
+
+
+
+
+On mobile, reply form goes at the bottom
+
+On desktop, no
+
+Both autofocus
