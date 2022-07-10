@@ -24,3 +24,31 @@ On mobile, reply form goes at the bottom
 On desktop, no
 
 Both autofocus
+
+July 6, 2022
+I am finally getting to do something.
+
+July 7, 2022
+Font-sizes now in rem.
+
+Comment trigger is reddit-like or twitter-like.
+
+
+Mobile:
+Opens full thread + main post floating above.
+
+Comment form shows up at bottom. Can be triggered by Comment button. Can be hidden.
+
+Desktop:
+Opens thread under.
+Comment form already exists at bottom. Autofocused by Comment button.
+Thread can be hidden.
+
+
++ Option to open in new window.
+
+Check the syntax of flex-end or end only.
+
+make the votes 24px height on replies
+
+Posts, comments, threads, structure is done, I think? What more?

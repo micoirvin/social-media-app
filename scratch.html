@@ -23,11 +23,24 @@
   </header>
 
   <main id="p0" class="post-box">
+    
     <div class="comments">
 
+      <div class="post-box">
+        <div class="post cmmnt">
+          <a href="#" class="avtr">
+            <img src="./images/avatars/image-amyrobson.png">
+          </a>
+          <div class="post-headr">
+            <span class="usrnme-box">
+              <a href="#" class="usrnme">amyrobson</a>
+            </span>
+            <a class="post-date">1 month ago</a>
+          </div>
+        </div>
+      </div>
 
 
-      
       <div class="post-box" id="c1">
         <!-- Start of first card -->
         <div class="post cmmnt">
@@ -54,6 +67,36 @@
             <button class="small-btn more">...</button>
           </div>
 
+        </div>
+
+        <div class="replies">
+          <div class="post-box">
+            <div class="post cmmnt">
+
+              <div class="post-headr">
+                <a href="#" class="avtr">
+                  <img src="./images/avatars/image-amyrobson.png">
+                </a>
+                <span class="usrnme-box">
+                  <a href="#" class="usrnme">amyrobson</a>
+                </span>
+                <a class="post-date">1 month ago</a>
+              </div>
+    
+              <p class="post-main">Impressive!</p>
+    
+              <div class="post-footr">
+                <span class="votes">
+                  <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                  <span class="score">12</span>
+                  <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                </span>
+                <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                <button class="small-btn more">...</button>
+              </div>
+    
+            </div>
+          </div>
         </div>
       </div>
 

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/198814e2e3.js" crossorigin="anonymous"></script>
+  
+  <title>Social media app</title>
+</head>
+
+<body>
+  <!-- <header>
+    <button class="small-btn" onclick="refresh()">Refresh</button>
+    <button class="small-btn" onclick="clearData()">Clear Data</button>
+    Change user:
+    <select name="" id="chng-user" onclick="changeUser()">
+    </select>
+  </header> -->
+
+  <main id="x0">
+    <div class="post form create">
+      <textarea placeholder="What's happening?"></textarea>
+
+      <div class="post-footr">
+        <a href="#" class="avtr">
+          <img src="./images/avatars/image-juliusomo.png">
+        </a>
+        <button type="submit" class="big-btn" onclick="createPost(this)">POST</button>
+      </div>
+    </div>
+    
+    <div class="posts">
+      <div id="p1" class="post-box">
+        <div class="post">
+          <div class="post-headr">
+            <a href="#" class="avtr"></a>
+            <span class="usrnme-box">
+              <a href="#" class="usrnme">P1amyrobson</a>
+              <a href="#" class="user-role">you</a>
+            </span>
+            <a class="post-date">1 month ago</a>
+          </div>
+
+          <p class="post-main">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor cum, architecto maxime ut unde doloribus placeat temporibus. Facere illo praesentium at magnam, similique!
+          </p>
+          
+          <div class="post-footr">
+            <span class="votes">
+              <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+              <span class="score">12</span>
+              <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+            </span>
+            <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+            <button class="small-btn more" type="button">...</button>
+          </div>
+
+        </div>
+
+        <div class="post form create cmmnt">
+          <a href="#" class="avtr"></a>
+
+          <textarea placeholder="Write a comment"></textarea>
+
+          <button type="submit" class="big-btn" onclick="createPost(this)">COMMENT</button>
+        </div>
+
+        <div class="comments">
+          <div class="post-box">
+            <div class="post cmmnt">
+              <div class="post-headr">
+                <a href="#" class="avtr"></a>
+                <span class="usrnme-box">
+                  <a href="#" class="usrnme">commenter</a>
+                </span>
+                <a class="post-date">1 month ago</a>
+              </div>
+    
+              <p class="post-main">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor cum, architecto maxime ut unde doloribus placeat temporibus. Facere illo praesentium at magnam, similique!
+              </p>
+              
+              <div class="post-footr">
+                <span class="votes">
+                  <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                  <span class="score">12</span>
+                  <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                </span>
+                <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                <button class="small-btn more" type="button">...</button>
+              </div>
+            </div>
+
+            <div class="post form create cmmnt reply">
+              <a href="#" class="avtr"></a>
+    
+              <textarea placeholder="Write a comment"></textarea>
+    
+              <button type="submit" class="big-btn" onclick="createPost(this)">target</button>
+            </div>
+
+            <a href="#" class="thread">
+              <span class="thrdln"></span>
+            </a>
+
+            <div class="replies">
+                <div class="post-box">
+                  <div class="post cmmnt reply">
+                    <div class="post-headr">
+                      <a href="#" class="avtr"></a>
+                      <span class="usrnme-box">
+                        <a href="#" class="usrnme">commenter</a>
+                      </span>
+                      <a class="post-date">1 month ago</a>
+                    </div>
+          
+                    <p class="post-main">
+                      target
+                      Lorem ipsum dolor sit.
+                    </p>
+                    
+                    <div class="post-footr">
+                      <span class="votes">
+                        <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                        <span class="score">12</span>
+                        <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                      </span>
+                      <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                      <button class="small-btn more" type="button">...</button>
+                    </div>
+                  </div>
+  
+                  <div class="post form create cmmnt reply">
+                    <a href="#" class="avtr"></a>
+          
+                    <textarea placeholder="Write a comment"></textarea>
+          
+                    <button type="submit" class="big-btn" onclick="createPost(this)">COMMENT</button>
+                  </div>
+                </div>
+  
+                <div class="post-box">
+                  <div class="post cmmnt reply">
+                    <div class="post-headr">
+                      <a href="#" class="avtr"></a>
+                      <span class="usrnme-box">
+                        <a href="#" class="usrnme">commenter</a>
+                      </span>
+                      <a class="post-date">1 month ago</a>
+                    </div>
+          
+                    <p class="post-main">
+                      Lorem ipsum dolor sit.
+                    </p>
+                    
+                    <div class="post-footr">
+                      <span class="votes">
+                        <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                        <span class="score">12</span>
+                        <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                      </span>
+                      <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                      <button class="small-btn more" type="button">...</button>
+                    </div>
+                  </div>
+  
+                  <a href="#" class="thread">
+                    <span class="thrdln"></span>
+                  </a>
+                  
+                  <div class="replies">
+                    <div class="post-box">
+                      <div class="post cmmnt reply">
+                        <div class="post-headr">
+                          <a href="#" class="avtr"></a>
+                          <span class="usrnme-box">
+                            <a href="#" class="usrnme">commenter</a>
+                          </span>
+                          <a class="post-date">1 month ago</a>
+                        </div>
+              
+                        <p class="post-main">
+                          Lorem ipsum dolor sit.
+                        </p>
+                        
+                        <div class="post-footr">
+                          <span class="votes">
+                            <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                            <span class="score">12</span>
+                            <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                          </span>
+                          <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                          <button class="small-btn more" type="button">...</button>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <div class="post-box">
+                      <div class="post cmmnt reply form updt">
+                        <div class="post-headr">
+                          <a href="#" class="avtr"></a>
+                          <span class="usrnme-box">
+                            <a href="#" class="usrnme">commenter</a>
+                          </span>
+                          <a class="post-date">1 month ago</a>
+                        </div>
+              
+                        <p class="post-main">
+                          Lorem ipsum dolor sit. Target
+                        </p>
+                        <textarea placeholder="Previous content"></textarea>
+  
+                        
+                        <div class="post-footr">
+                          <span class="votes">
+                            <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                            <span class="score">12</span>
+                            <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                          </span>
+                          <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                          <button class="small-btn more" type="button">...</button>
+                          <button class="small-btn cncl" type="button">Cancel</button>
+                          <button class="big-btn" type="button">SAVE</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+  
+          </div>
+
+          <div class="post-box">
+            <div class="post cmmnt">
+              <div class="post-headr">
+                <a href="#" class="avtr"></a>
+                <span class="usrnme-box">
+                  <a href="#" class="usrnme">commenter</a>
+                </span>
+                <a class="post-date">1 month ago</a>
+              </div>
+    
+              <p class="post-main">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor cum, architecto maxime ut unde doloribus placeat temporibus. Facere illo praesentium at magnam, similique!
+              </p>
+              
+              <div class="post-footr">
+                <span class="votes">
+                  <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                  <span class="score">12</span>
+                  <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                </span>
+                <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                <button class="small-btn more" type="button">...</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div id="c3" class="post-box cmmnt">
+            <div class="post cmmnt">
+              <div class="post-headr">
+                <a href="#" class="avtr"></a>
+                <span class="usrnme-box">
+                  <a href="#" class="usrnme">commenter</a>
+                </span>
+                <a class="post-date">1 month ago</a>
+              </div>
+    
+              <p class="post-main">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor cum, architecto maxime ut unde doloribus placeat temporibus. Facere illo praesentium at magnam, similique!
+              </p>
+              
+              <div class="post-footr">
+                <span class="votes">
+                  <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+                  <span class="score">12</span>
+                  <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+                </span>
+                <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+                <button class="small-btn more" type="button">...</button>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <div id="p2" class="post-box">
+        <div class="post">
+          <div class="post-headr">
+            <a href="#" class="avtr"></a>
+            <span class="usrnme-box">
+              <a href="#" class="usrnme">P2amyrobson</a>
+            </span>
+            <a class="post-date">1 month ago</a>
+          </div>
+
+          <p class="post-main">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor cum, architecto maxime ut unde doloribus placeat temporibus. Facere illo praesentium at magnam, similique!
+          </p>
+          
+          <div class="post-footr">
+            <span class="votes">
+              <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+              <span class="score">12</span>
+              <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+            </span>
+            <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+            <button class="small-btn more" type="button">...</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="p3" class="post-box">
+        <div class="post form updt">
+          <div class="post-headr">
+            <a href="#" class="avtr"></a>
+            <span class="usrnme-box">
+              <a href="#" class="usrnme">P2amyrobson</a>
+            </span>
+            <a class="post-date">1 month ago</a>
+          </div>
+
+          <p class="post-main">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor cum, architecto maxime ut unde doloribus placeat temporibus. Facere illo praesentium at magnam, similique!
+          </p>
+
+          <textarea placeholder="Some text before"></textarea>
+          
+          <div class="post-footr">
+            <span class="votes">
+              <button class="vote-btn" type="button" onclick="addScore('c1', -1)">−</button>
+              <span class="score">12</span>
+              <button class="vote-btn" type="button" onclick="addScore('c1', 1)">+</button>
+            </span>
+            <button class="small-btn reply" type="button" onclick="createPostForm('c1')">Reply </button>
+            <button class="small-btn more" type="button">...</button>
+            <button class="small-btn cncl" type="button">Cancel</button>
+            <button class="big-btn" type="button">SAVE</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </main>
+  
+
+  <div class="modal-bg" id="del-modal">
+    <div class="modal del">
+       <h3>Delete comment</h3>
+       <p>
+       Are you sure you want to delete this comment? This will remove the comment and can't be undone.
+       </p>
+       <button type="button" class="big-btn no" onclick="closeDelModal()">NO, CANCEL</button>
+       <button type="button" class="big-btn yes">YES, DELETE</button>
+    </div>
+ </div>
+
+  <!-- <script src="./data.js"></script>
+  <script src="./main.js"></script> -->
+</body>
+</html>
