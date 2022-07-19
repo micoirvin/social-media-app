@@ -52,3 +52,42 @@ Check the syntax of flex-end or end only.
 make the votes 24px height on replies
 
 Posts, comments, threads, structure is done, I think? What more?
+
+
+July 13, 2022
+just test the viewport height
+
+at least 520px height
+
+at least 600px width
+
+Where to pick it up
+Messages micro-structure.
+
+Messages and other nav buttons floating windows macro-structure (sizing based on vw)
+
+July 16, 2022
+My screen is 1280px x 720px
+
+The effective height is 613px
+
+There is 77px for header.
+
+Let's say a 992px laptop. The height is 558px.
+
+Effective height is 451px.
+
+Message pane and notifs pane has 374px left for height
+
+I created the problem of rem and px. Okay don't bother about zooming users for a while.
+
+Where to pick it up?
+Messages classes. How to "unfloat"
+Micro-layout of messages.
+
+July 17, 2022
+Where to pick it up? Unfloating in javascript.
+
+July 18, 2022
+The header buttons work nice. Where to pick it up? Building each page :)
+Building micro-components.

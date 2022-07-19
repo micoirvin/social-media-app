@@ -39,12 +39,52 @@ p {
     line-height: 150%;
 }
 
-main {
-    max-width: 720px;
+.cntner0 {
+    margin: 0 auto;
     display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: clamp(80%, 600px, 100%);
+}
+
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex; 
     flex-direction: column;
     gap: 12px;
+    z-index: 100;
 }
+
+aside {
+    display: none;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .cntner0 {
+        width: min(100%, 1104px);
+        padding: 0 32px;
+    }
+    
+    aside {
+        width: 30%;
+        min-height: 100vh;
+        display: block;
+        border: 0.1px dashed gray;
+    }
+    
+    main {
+        width: 66%;
+    }
+
+
+}
+
+
 
 /* ********* POSTS SECTION  ************************** */
 
@@ -60,7 +100,7 @@ main {
     display: flex;
     flex-direction: column;
     background-color: white;
-    background-color: brown;
+    /* background-color: brown; */
 }
 /* OK */
 
@@ -71,7 +111,7 @@ main {
     flex-direction: column;
     gap: 12px;
     background-color: white;
-    background-color: orange;
+    /* background-color: orange; */
 }
 /* OK */
 
@@ -80,7 +120,7 @@ main {
 /* **************** POST COMPONENTS ***************** */
 
 .post-headr, .post-footr {
-    background-color: fuchsia;
+    /* background-color: fuchsia; */
     display: flex;
     align-items: center;
     gap: 12px;
@@ -94,8 +134,10 @@ a {
 }
 
 a.avtr {
-    width: 2rem;
-    height: 2rem;
+    /* width: 2rem;
+    height: 2rem; */
+    width: 32px;
+    height: 32px;
     display: block;
     border-radius: 20rem;
     background-color: var(--red200);
@@ -192,21 +234,17 @@ button {
     display: none;
 } */
 
-.small-btn i {
-    font-size: 0.8rem;
-    margin-right: 6px;
-}
 
 /* ***************** COMMENTS *************** */
 
 .comments {
     order: 2;
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 /* OK */
 
 .comments .post-box {
-    background-color: cyan;
+    /* background-color: cyan; */
     padding: 0px;
     display: grid;
     grid-template-columns: 2rem 1fr;
@@ -216,7 +254,7 @@ button {
 /* OK */
 
 .post.cmmnt {
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
     gap: 8px;
     grid-column: 2;
     grid-row: 1;
@@ -243,7 +281,7 @@ button {
     grid-row: 1 / 4;
     justify-self: center;
     display: block;
-    background-color: orange;
+    /* background-color: orange; */
 }
 /* OK */
 
@@ -252,7 +290,7 @@ a.thread span.thrdln {
     height: 100%;
     margin: 0 auto;
     display: block;
-    background-color: black;
+    background-color: var(--gray100);
 }
 /* OK */
 
@@ -267,7 +305,7 @@ a.thread span.thrdln {
 
 .replies .post-box {
     grid-template-columns: 1.5rem 1fr;
-    background-color: purple;
+    /* background-color: purple; */
 }
 /* OK */
 
@@ -295,20 +333,25 @@ a.thread span.thrdln {
 }
 /* OK */
 
-textarea {
+
+
+
+
+textarea, input {
     font-family: Lato, Arial, Helvetica, sans-serif;
     resize: vertical;
+    border: none;
+    outline: none;
+    border-radius: 8px;
 }
 /* OK */
 
 .post.form textarea {
     width: 100%;
     flex-shrink: 100;
-    min-height: 6rem;
+    min-height: 3em;
     padding: 12px;
-    background-color: white;
     font-size: 1.5rem;
-    border-radius: 8px;
     border: 1px solid var(--gray200);
 }
 /* OK */
@@ -318,8 +361,9 @@ textarea {
 }
 
 .big-btn {
-    min-width: 72px;
-    padding: 12px;
+    padding: 8px;
+    display: block;
+    /* min-width: 32px; */
     background-color: var(--blue500);
     color: white;
     text-align: center;
@@ -327,6 +371,8 @@ textarea {
     border-radius: 8px;
 }
 /* OK */
+
+/* For PC, padding: 10px 12px */
 
 .big-btn:active {
     background-color: var(--blue200);
@@ -344,11 +390,28 @@ textarea {
 
 .post.form.create.cmmnt {
     order: 1;
-    padding: 12px 0px;
+    /* padding: 12px 0px; */
     flex-direction: row;
     align-items: start;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    padding: 12px;
+    z-index: 100;
 }
 /* OK */
+
+
+
+@media only screen and (min-width: 39rem) {
+    .post.form.create.cmmnt {
+        position: relative;
+        top: 0;
+        width: auto;
+        padding: 12px 0px;
+    }
+}
 
 .post.form.create.cmmnt a.avtr {
     position: relative;
@@ -358,6 +421,7 @@ textarea {
 
 .post.form.create.cmmnt textarea {
     font-size: 1rem;
+    min-height: 3em;
     padding: 8px;
 }
 /* OK */
@@ -498,13 +562,222 @@ h3 {
 }
 
 /* ********** EXTRAS ******************* */
+.headr-cntner {
+    background-color: var(--blue500);
+    background-color: white;
+    border-bottom: 1px solid var(--gray200);
+    margin-bottom: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+}
+
 header {
-    color: var(--blue500);
+    width: 100%;
+    margin: 0 auto;
     height: 64px;
+    padding: 0 12px;
+    color: var(--blue500);
+    min-height: 56px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 16px;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+@media only screen and (min-width: 624px) {
+    header {
+        padding: 0;
+    }
+    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+svg {
+    height: 100%;
+}
+
+nav .big-btn.light-btn {
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    line-height: 0%;
+    color: var(--blue500);
+    background-color: white;
+    border: 1px solid var(--gray200);
+}
+
+nav .big-btn.light-btn svg path {
+    /* border: 0.1px solid gray; */
+    fill: var(--blue500);
+    /* height: 100%;
+    width: 100%; */
+}
+
+nav .big-btn {
+    width: 32px;
+    height: 32px;
+}
+
+nav .big-btn svg path {
+    fill: white;
+    /* height: 100%;
+    width: 100%; */
+}
+
+nav a.avtr.user {
+    display: none;
+}
+
+@media only screen and (min-width: 25rem) {
+    nav a.avtr.user {
+        display: block;
+    }
+}
+
+
+.srch-form {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.srch-form input {
+    font-size: 0.9rem;
+    min-height: 40px;
+    display: none;
+    padding: 0 8px;
+    resize: none;
+    border: 0.1px solid var(--gray200);
+}
+
+.srch-form .small-btn.light-btn {
+    /* background-color: orange; */
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    padding: 4px;
+    right: 8px;
+    line-height: 0%;
+    border: 1px solid var(--gray200);
+    border-radius: 8px;
+}
+
+.small-btn svg path {
+    fill: var(--blue500);
+}
+
+.srch-form .big-btn.light-btn {
+    display: block;
+}
+
+
+
+
+@media only screen and (min-width: 624px) {
+    .srch-form {
+        width: 240px;
+    }
+
+    .srch-form input {
+        /* width: 240px; */
+        width: 100%;
+        display: block;
+        /* display: flex;
+        align-items: center; */
+    }
+
+    .srch-form .big-btn.light-btn {
+        display: none;
+    }
+
+}
+
+.srch-form input:is(:focus, :hover) {
+    outline: 1px solid var(--blue500);
+}
+
+
+.float {
+    display: none;
+    padding: 8px;
+    background-color: white;
+    /* background-color: aqua; */
+}
+
+.unfloat.float {
+
+}
+
+@media only screen and (min-width: 624px) {
+
+}
+
+.float li {
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    list-style: none;
+}
+
+.float li a {
+    color: var(--gray500);
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.float li a:hover {
+    background-color: var(--gray100);
+}
+
+.float li a.more {
+    text-align: center;
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--blue500);
+}
+
+
+@media only screen and (min-width: 992px) {
+    .float {
+        display: block;
+        position: absolute;
+        top: 58px;
+        max-height: 360px;
+        max-height: calc(100vh - 100px);
+        min-width: 320px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--blue500);
+    }
+
+    .float.srch-sggst {
+        left: 0;
+    }
+
+    .float:is(.menu, .notifs) {
+        right: 0;
+    }
+}
+
+
+
+.messages {
+    height: 360px;
+    height: calc(100vh - 100px);
+    /* height: 240px; */
+    width: 640px;
+    border: 1px dashed black;
+    bottom: 0;
+    right: 12px;
+    position: fixed;
+    border-radius: 8px 8px 0px 0px;
+    z-index: 300;
 }
 
 select {
@@ -521,3 +794,8 @@ select {
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); text-decoration: underline; }
+
+
+.messages, .notifs, .srch-sggst {
+    display: none!important;
+}

@@ -1,0 +1,185 @@
+/* ********** HEADER ******************* */
+.headr-cntner {
+    top: 0;
+    position: sticky;
+    z-index: 1000000;
+    margin-bottom: 12px;
+    background-color: white;
+    border-bottom: 1px solid var(--gray200);
+}
+
+header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+    color: var(--blue500);
+}
+
+@media only screen and (min-width: 39rem) {
+    header {
+        padding: 12px 0;
+    }
+    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav .big-btn.light-btn {
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid var(--gray200);
+}
+
+nav .light-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0%;
+}
+
+nav .big-btn.light-btn svg {
+    height: 100%;
+}
+
+nav .small-btn.light-btn svg {
+    height: 100%;
+}
+
+nav svg path {
+    fill: var(--blue500);
+}
+
+nav a.avtr.user {
+    display: none;
+}
+
+@media only screen and (min-width: 25rem) {
+    nav a.avtr.user {
+        display: block;
+    }
+}
+
+.srch-form {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+
+.srch-form input {
+    font-size: 0.9rem;
+    min-height: 40px;
+    display: none;
+    padding: 0 8px;
+    resize: none;
+    border: 1px solid var(--gray200);
+}
+
+.srch-form .small-btn.light-btn {
+    /* background-color: orange; */
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    padding: 6px;
+    right: 8px;
+    line-height: 0%;
+    border: 1px solid var(--gray200);
+    border-radius: 8px;
+}
+
+@media only screen and (min-width: 39rem) {
+    .srch-form {
+        width: 15rem;
+    }
+
+    .srch-form input {
+        width: 100%;
+        display: block;
+    }
+
+    .srch-form .big-btn.light-btn {
+        display: none;
+    }
+
+}
+
+
+/* **************** FLOATS ************************ */
+
+.float {
+    display: none;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid var(--gray200);
+    /* background-color: aqua; */
+}
+
+.unfloat.float {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.float li {
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    list-style: none;
+}
+
+.float li a {
+    color: var(--gray500);
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.float li a.more {
+    text-align: center;
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--blue500);
+}
+
+.float {
+    /* display: block; */
+    position: absolute;
+    top: 58px;
+    max-height: 360px;
+    max-height: calc(100vh - 100px);
+    width: 360px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.float#search {
+    left: 0;
+}
+
+.float:is(#options, #notifs) {
+    right: 0;
+}
+
+@media only screen and (min-width: 39rem) and (min-height: 25rem) {
+
+}
+
+/* ************** ACTIVE STATES ******************* */
+
+
+.srch-form input:is(:focus, :hover) {
+    outline: 1px solid var(--blue500);
+}
+
+.float li a:hover {
+    background-color: var(--gray100);
+}

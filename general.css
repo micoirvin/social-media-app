@@ -1,0 +1,142 @@
+/* *********** GENERAL ************************************* */
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
+:root {
+    /* primary colors */
+    --blue500: #5457b6;
+    --blue200: #c3c4ef;
+    
+    --red500: #ed6468;
+    --red200: #ffb8bb;
+
+    --gray100: #eeeef6;
+    --gray200: #e0e0f0;
+    --gray300: #90959b;
+    --gray400: #4d535a;
+    --gray500: #333d4e;
+
+}
+
+body {
+    background-color: var(--gray100);
+    color: var(--gray400);
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    /* font-size: max(1rem, 0.444vw + 0.6rem); fluid typography for large screens */
+    --scalerem: calc((100vw - 375em/16) / (768/16 - 375/16));
+    --scalerpx: calc((100vw - 375px) / (768 - 375));
+    /* padding-bottom: 300px; */
+}
+
+#body {
+    height: 100vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    line-height: 150%;
+}
+
+.cntner0 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: clamp(80%, 600px, 100%);
+}
+
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex; 
+    flex-direction: column;
+    gap: 12px;
+}
+
+aside {
+    display: none;
+}
+
+@media only screen and (min-width: 62rem) {
+    .cntner0 {
+        width: min(100%, 1056px);
+        padding: 0 32px;
+    }
+    
+    aside {
+        width: 30%;
+        /* min-height: 100vh; */
+        display: block;
+        border: 0.1px dashed gray;
+    }
+    
+    main {
+        width: 66%;
+    }
+
+
+}
+
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    font-size: 0.9rem;
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+textarea, input {
+    font-size: 1rem;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    resize: vertical;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+select {
+    font-size: 1em;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    color: var(--gray500);
+    /* border: 0.1px solid transparent; */
+    border: 1px solid var(--gray500);
+    outline: none;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* svg {
+    width: 100%;
+}
+svg path {
+    width: 100%;
+} */
+
+.developer-buttons {
+    display: none;
+}
+
+.focus {
+    outline: 1px solid var(--blue500);
+}

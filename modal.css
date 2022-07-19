@@ -1,0 +1,70 @@
+/* ************ MODAL ******************** */
+
+
+.modal-bg {
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.modal {
+    max-width: 25rem;
+    margin: 0 auto;
+    padding: 24px;
+    padding: clamp(24px, 24px + var(--scalerpx)*8, 32px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0px;
+    column-gap: 12px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+h3 {
+    margin-bottom: 1em;
+    font-size: 1.4rem;
+    font-size: clamp(1.3rem, 1.3rem + var(--scalerem)*0.2, 1.5rem);
+    font-weight: 700;
+    color: var(--gray500);
+}
+
+.modal h3 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.modal p {
+    margin-bottom: clamp(20px, 20px + var(--scalerpx)*4, 24px);
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+.modal .big-btn {
+    width: 100%;
+    padding: 16px;
+    grid-row: 3;
+}
+
+.modal.del .big-btn.no{
+    grid-column: 1;
+    background-color: var(--gray400);
+}
+
+.modal.del .big-btn.no:active{
+    background-color: var(--gray300);
+}
+
+.modal.del .big-btn.yes{
+    grid-column: 2;
+    background-color: var(--red500);
+}
+
+.modal.del .big-btn.yes:active{
+    background-color: var(--red200);
+}

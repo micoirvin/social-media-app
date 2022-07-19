@@ -1,0 +1,396 @@
+/* ********* POSTS SECTION  ************************** */
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+/* OK */
+
+.post-box {
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* background-color: brown; */
+}
+/* OK */
+
+.post {
+    padding: 12px 0;
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: white;
+    /* background-color: orange; */
+}
+/* OK */
+
+
+
+/* **************** POST COMPONENTS ***************** */
+
+.post-headr, .post-footr {
+    /* background-color: fuchsia; */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+}
+/* OK */
+
+a.avtr {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    border-radius: 20rem;
+    background-color: var(--red200);
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+a.avtr img {
+    width: 100%;
+}
+
+span.usrnme-box {
+    width: min-content; /* delete? */
+    display: flex;
+    gap: 4px;
+}
+
+a.usrnme {
+    color: var(--gray500);
+    font-weight: 500;
+}
+
+a.user-role {
+    padding: 2px 4px;
+    font-size: 0.8em;
+    background-color: var(--blue500);
+    color: white;
+    border-radius: 2px;
+}
+
+a.user-role:active {
+    background-color: var(--blue200);
+}
+
+a:is(.usrnme, .post-date):active {
+    text-decoration: underline;
+}
+
+span.votes {
+    /* width: fit-content; don't delete yet. might need for vertical layout*/
+    min-height: 32px;
+    padding: 0px 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: var(--gray100);
+    text-align: center;
+    border-radius: 100px;
+}
+
+span.score {
+    padding: 4px;
+    display: block;
+    color: var(--blue500);
+    font-weight: 500;
+}
+
+.vote-btn {
+    padding: 4px;
+    display: block;
+    line-height: 85%;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--blue200);
+}
+
+.small-btn {
+    width: fit-content; /* Should I delete this? Check in the modal*/
+    display: block;
+    font-weight: 500;
+    color: var(--blue500);
+}
+
+/* .post:not(.form) :is(.big-btn, .small-btn.cncl, textarea) {
+    display: none;
+} */
+
+
+/* ***************** COMMENTS *************** */
+
+.comments {
+    order: 2;
+    /* background-color: lightblue; */
+}
+/* OK */
+
+.comments .post-box {
+    /* background-color: cyan; */
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    column-gap: 8px;
+    row-gap: 0px;
+}
+/* OK */
+
+.post.cmmnt {
+    /* background-color: greenyellow; */
+    gap: 8px;
+    grid-column: 2;
+    grid-row: 1;
+}
+/* OK */
+
+.post.cmmnt :is(.post-headr, .post-footr) {
+    gap: 8px;
+}
+/* OK */
+
+.post.cmmnt a.avtr {
+    position: absolute;
+    top: 0;
+    left: calc(-2rem - 8px);
+}
+/* OK */
+
+.comments a.thread {
+    height: 100%;
+    width: 8px;
+    margin-top: calc(2rem + 16px);
+    grid-column: 1;
+    grid-row: 1 / 4;
+    justify-self: center;
+    display: block;
+    /* background-color: orange; */
+}
+/* OK */
+
+a.thread span.thrdln {
+    width: 2px;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+    background-color: var(--gray100);
+}
+/* OK */
+
+
+/* **************** REPLIES ******************* */
+
+.replies {
+    grid-column: 2;
+    grid-row: 3;
+}
+/* OK */
+
+.replies .post-box {
+    grid-template-columns: 1.5rem 1fr;
+    /* background-color: purple; */
+}
+/* OK */
+
+.post.cmmnt.reply a.avtr {
+    width: 1.5rem;
+    height: 1.5rem;
+    left: calc(-1.5rem - 8px);
+}
+/* OK */
+
+.post.cmmnt.reply span.votes {
+    min-height: 28px;
+}
+
+.replies a.thread {
+    margin-top: calc(1.5rem + 16px);
+}
+/* OK */
+
+
+/* ********** POST FORM  ***************************** */
+
+.post.form.create {
+    padding: 12px;
+}
+/* OK */
+
+.post.form textarea {
+    width: 100%;
+    flex-shrink: 100;
+    min-height: 3em;
+    padding: 12px;
+    font-size: 1.5rem;
+    border: 1px solid var(--gray200);
+}
+/* OK */
+
+.big-btn {
+    padding: 8px;
+    display: block;
+    background-color: var(--blue500);
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 8px;
+}
+/* OK */
+
+/* For PC, padding: 10px 12px */
+
+.post.form.create .post-footr {
+    justify-content: space-between;
+}
+/* OK */
+
+
+
+/* ******* COMMENT FORM ********************** */
+
+.post.form.create.cmmnt {
+    order: 1;
+    /* padding: 12px 0px; */
+    flex-direction: row;
+    align-items: start;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    padding: 12px;
+    z-index: 1;
+}
+/* OK */
+
+
+@media only screen and (min-width: 39rem) {
+    .post.form.create.cmmnt {
+        position: relative;
+        top: 0;
+        width: auto;
+        padding: 12px 0px;
+    }
+}
+
+.post.form.create.cmmnt a.avtr {
+    position: relative;
+    left: 0;
+}
+/* OK */
+
+.post.form.create.cmmnt textarea {
+    font-size: 1rem;
+    min-height: 3em;
+    padding: 8px;
+}
+/* OK */
+
+
+/* *********** REPLY FORM ************* */
+
+.post.form.create.cmmnt.reply {
+    grid-column: 2;
+    grid-row: 2;
+}
+/* OK */
+
+/* ************ UPDATE COMMENT FORM *********************** */
+
+.post.form.updt .post-main {
+    display: none;
+}
+
+.post.form.updt textarea {
+    display: block;
+    padding: 8px;
+    font-size: inherit; /*need something*/
+}
+
+
+.post.form.updt :is(span.votes, .small-btn:is(.reply, .more)) {
+    display: none;
+}
+
+.post.form.updt .post-footr {
+    justify-content: flex-end;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 62rem) {
+    .big-btn:hover {
+        background-color: var(--blue200);
+    }
+    
+    a:is(.usrnme, .post-date):hover {
+        text-decoration: underline;
+    }
+
+    a.user-role:hover {
+        background-color: var(--blue200);
+    }
+
+    .vote-btn:hover {
+        color: var(--blue500);
+    }
+
+    .small-btn:hover {
+        color: var(--blue200);
+    }
+
+    .small-btn.del:hover {
+        color: var(--red200);
+    }
+
+    .modal.del .big-btn.no:hover{
+        background-color: var(--gray300);
+    }
+    
+    .modal.del .big-btn.yes:hover{
+        background-color: var(--red200);
+    }
+}
+
+
+
+/* *********** ACTIVE STATES ************ */
+
+
+.vote-btn:active {
+    color: var(--blue500);
+}
+
+.small-btn:active {
+    color: var(--blue200);
+}
+
+.post.form textarea:is(:focus, :hover) {
+    outline: 1px solid var(--blue500);
+}
+
+
+.big-btn:active {
+    background-color: var(--blue200);
+}
+/* OK */
