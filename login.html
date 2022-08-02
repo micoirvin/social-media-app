@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/general.css">
+  <link rel="stylesheet" href="./styles/posts.css">
+  <link rel="stylesheet" href="./styles/floats.css">
+  <link rel="stylesheet" href="./styles/messages.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+  <link rel="stylesheet" href="./styles/login.css">
+  
+  <title>Social media app</title>
+</head>
+
+<body>
+    <div class="cntner0">
+      <div class="login-cntner">
+        <div id="login-box">
+          <div class="login-option" id="login">
+            <h3>Log in</h3>
+            <input type="text" placeholder="username">
+            <p class="err-msg">User does not exist.</p>
+            <button class="big-btn">Log in</button>
+          </div>
+
+          <div class="login-option" id="sign-in">
+            <h3>Create new account</h3>
+            <input type="text" placeholder="new_username">
+            <p class="err-msg">Username is not available.</p>
+            <button class="big-btn">Create account</button>
+          </div>
+
+          <div class="login-option" id="saved-users">
+            <h3>Saved users</h3>
+            <p>(developer testing)</p>
+            <ul id="users">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="filler">
+      filler
+    </div>
+
+    <div>Currently nothing here. Please check this page to see the progress: <a href="./scratch2.html" style="text-decoration: underline;">testing UI</a></div>
+
+  <div class="developer-buttons">
+    <button class="small-btn" onclick="refresh()">Refresh</button>
+    <button class="small-btn" onclick="clearData()">Clear Data</button>
+    Change user:
+    <select name="" id="chng-user" onclick="changeUser()">
+    </select>
+    <button class="small-btn" onclick="getScroll()">Get Scroll</button>
+  </div>
+
+  <script type="module" src="./scripts/elementsOperations.js"></script>
+  <script type="module" src="./scripts/initData.js"></script>
+  <script type="module" src="./scripts/getData.js"></script>
+  <script type="module" src="./scripts/dataOperations.js"></script>
+  <script type="module" src="./scripts/login.js"></script>
+</body>
+</html>

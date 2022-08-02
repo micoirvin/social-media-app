@@ -2,6 +2,7 @@
 .headr-cntner {
     top: 0;
     position: sticky;
+    width: 100%;
     z-index: 1000000;
     margin-bottom: 12px;
     background-color: white;
@@ -11,12 +12,11 @@
 header {
     width: 100%;
     margin: 0 auto;
-    padding: 12px;
+    padding: 12px 16px;
     display: flex;
     align-items: center;
     gap: 12px;
     justify-content: space-between;
-    color: var(--blue500);
 }
 
 @media only screen and (min-width: 39rem) {
@@ -32,7 +32,9 @@ nav {
     gap: 12px;
 }
 
-nav .big-btn.light-btn {
+.big-btn.light-btn {
+    min-height: 0px;
+    min-width: 0px;
     height: 40px;
     width: 40px;
     padding: 8px;
@@ -40,31 +42,27 @@ nav .big-btn.light-btn {
     border: 1px solid var(--gray200);
 }
 
-nav .light-btn {
+.light-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     line-height: 0%;
 }
 
-nav .big-btn.light-btn svg {
+svg {
     height: 100%;
 }
 
-nav .small-btn.light-btn svg {
-    height: 100%;
-}
-
-nav svg path {
+.light-btn svg path {
     fill: var(--blue500);
 }
 
-nav a.avtr.user {
+nav .avtr.user {
     display: none;
 }
 
 @media only screen and (min-width: 25rem) {
-    nav a.avtr.user {
+    nav .avtr.user {
         display: block;
     }
 }
@@ -132,15 +130,15 @@ nav a.avtr.user {
 }
 
 .float li {
-    font-family: Lato, Arial, Helvetica, sans-serif;
     list-style: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px 12px;
 }
 
 .float li a {
-    color: var(--gray500);
+    color: var(--gray400);
     display: block;
-    padding: 8px 12px;
-    border-radius: 8px;
 }
 
 .float li a.more {
@@ -169,7 +167,7 @@ nav a.avtr.user {
     right: 0;
 }
 
-@media only screen and (min-width: 39rem) and (min-height: 25rem) {
+@media only screen and (min-width: 39rem) and (min-height: 400px) {
 
 }
 
@@ -180,6 +178,10 @@ nav a.avtr.user {
     outline: 1px solid var(--blue500);
 }
 
-.float li a:hover {
+.float li:hover {
     background-color: var(--gray100);
+}
+
+.light-btn:is(.big-btn, .light-btn):is(:hover) {
+    outline: 1px solid var(--blue500);
 }

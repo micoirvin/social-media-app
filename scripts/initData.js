@@ -1,36 +1,78 @@
 // Not ideal. Only for file-based access.
 let initData = 
 {
-  "currentUser": "juliusomo",
+  "currentUser": null,
+
+  "globalCurrentId": 5,
 
   "users": {
     "amyrobson": {
       "image": { 
         "png": "./images/avatars/image-amyrobson.png",
         "webp": "./images/avatars/image-amyrobson.webp"
-      }
+      },
+      "contacts": [
+        "maxblagun",
+        "ramsesmiron",
+        "juliusomo"
+      ],
+      "convosIds": ["k8"]
     },
     "maxblagun": {
       "image": { 
         "png": "./images/avatars/image-maxblagun.png",
         "webp": "./images/avatars/image-maxblagun.webp"
-      }
+      },
+      "contacts": [
+        "amyrobson"
+      ],
+      "convosIds": ["k8"]
     },
     "ramsesmiron": {
       "image": { 
         "png": "./images/avatars/image-ramsesmiron.png",
         "webp": "./images/avatars/image-ramsesmiron.webp"
-      }
+      },
+      "contacts": [],
+      "convosIds": []
     },
     "juliusomo": {
       "image": { 
         "png": "./images/avatars/image-juliusomo.png",
         "webp": "./images/avatars/image-juliusomo.webp"
-      }
+      },
+      "contacts": [],
+      "convosIds": ["k8"]
     }
+  },
+
+
+  "messages": {
+    "k8": {
+      "users": ["amyrobson", "juliusomo"],
+      "childrenIds": []
+    },
+    "m9": {
+      "parentId": "k8",
+      "content": "This is m9.",
+      "createdAt": "1 month ago",
+      "user": "amyrobson"
+    }
+
   },
   
   "posts": {
+    "x0": {
+      "childrenIds": ["p0"]
+    },
+    "p0": {
+      "parentId": "x0",
+      "content": "This is post0. Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
+      "createdAt": "1 month ago",
+      "score": 12,
+      "user": "amyrobson",
+      "childrenIds": ["c1", "c2"]
+    }, 
     "c1": {
       "parentId": "p0",
       "content": "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
@@ -63,7 +105,7 @@ let initData =
       "user": "juliusomo",
       "childrenIds": []
     }
-  },
-
-  "globalCurrentId": 4
+  }
 }
+
+export { initData }

@@ -1,0 +1,82 @@
+.login-cntner {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+#login-box {
+    margin: 48px auto 0;
+    padding: 16px;
+    min-height: 25rem;
+    width: 100%;
+    max-width: 25rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media only screen and (min-width: 26rem) {
+    #login-box {
+        border-radius: 8px;
+    }
+}
+
+.login-option {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-option .big-btn {
+    align-self: end;
+}
+
+.login-option input {
+    border: 1px solid var(--gray200);
+    min-height: 32px;
+    width: 100%;
+    padding: 8px;
+}
+
+.login-option input:is(:hover, :focus) {
+    outline: 1px solid var(--blue500);
+}
+
+#users li {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#users li:hover {
+    background-color: var(--gray100);
+}
+
+.field-is-empty {
+    animation-name: fieldIsEmpty;
+    animation-duration: 0.2s;
+    animation-iteration-count: 2;
+    animation-direction: alternate; 
+}
+
+.err-msg {
+    font-size: 0.8rem;
+    color: var(--red500);
+    display: none;
+}
+
+@keyframes fieldIsEmpty {
+    0% {
+        left: 0px;
+    }
+    50% {
+        left: -4px;
+    }
+    100% {
+        left: 4px;
+    }
+}

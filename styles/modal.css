@@ -26,15 +26,10 @@
     background-color: white;
 }
 
-h3 {
-    margin-bottom: 1em;
-    font-size: 1.4rem;
-    font-size: clamp(1.3rem, 1.3rem + var(--scalerem)*0.2, 1.5rem);
-    font-weight: 700;
-    color: var(--gray500);
-}
+
 
 .modal h3 {
+    margin-bottom: 1em;
     grid-column: 1 / -1;
     grid-row: 1;
 }

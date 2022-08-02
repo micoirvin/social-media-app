@@ -91,3 +91,161 @@ Where to pick it up? Unfloating in javascript.
 July 18, 2022
 The header buttons work nice. Where to pick it up? Building each page :)
 Building micro-components.
+
+July 19, 2022
+16:11
+
+Updates:
+1. Better UI.
+2. Header buttons are working.
+3. Many changes with stylesheet.
+
+Future updates:
+1. Still need to add few changes to integrate my previous project to make the "posting" function to work.
+2. Need to build micro-components inside "messages" and other mini-features.
+
+Comments:
+1. Took quite a long time because the stylesheet was a mess.
+2. Had some side work, so I was not able to put in more time to build this.
+
+
+Random thoughts:
+Ways to optimize the posting. I can specify the root right away. For example, save the root of the thread as an element, then use it in querySelector as parent.querySelector() instead of document.querySelector().
+
+July 20, 2022
+Doing good with the Messages UI. Just need to finish some stuff tomorrow. Where to pick it up? Grid layout of the message.
+
+I also learned about @media (hover: none)  and (pointer: none) and stuff to know the touch or non-touch devices.
+
+July 21, 2022
+Where to pick it up. Auto closing of floats when outside is clicked (if easy to do). Toggling inside messages, like closing a chat or minimizing etc.
+
+July 22, 2022
+I remembered minmax! Use this on post grid.
+
+July 23, 2022
+Random Q: What is preventDefault again?
+
+New learnings: event delegation, you can use event.target then add the function. Check about bubbling stuff.
+.closest() no need .parentElement or what not. 
+
+innerText, innerHTML, textContent
+
+Almost all buttons work properly.
+
+Buttons I still need to take care of: back and x and inputs. Still need to do something about the recent chat.
+
+July 23, 2022
+Object-oriented programming? How to use properly
+
+July 24, 2022
+Forgot to add some note?
+
+July 25, 2022
+Forgot to add some note?
+I think the last thing is about the clicking of new conversation.
+Also the actvSidebar needs to be canceled when clicking new sidebar.
+
+
+Some realizations about sizing.
+
+When there is a parent and a child. You set child to block, height 100%, it may bleed outside the parent if parent has padding. If you make child grid or flex, it somehow fixes the problem :)
+
+#contacts, #settings, #recent-convos, .srch-chat
+
+Need to fix ids and classes
+
+
+July 26, 27
+
+July 28, 2022
+Fixed some margins in posts. Some waste of time trying to make the threadline work.
+Did some thinking about data structure
+
+July 29, 2022
+Too much thinking. But I also was able to accomplish some things.
+
+Where to pick up? Duplicating comment forms. Issue of reading children posts. Extent and extra triggers.
+
+July 30, 2022
+Need to limit to three levels of comments
+Need a highlight for the thread being replied to.
+
+July 31, 2022
+Things don't scroll on the body but on the #body. So it does not adjust
+
+
+BUGS TO FIX:
+- Need to fix color of info button
+- Focusing and hovering
+- Hover color of small-btn
+- Proper implementation of button class names
+
+
+FEATURES TO ADD:
+- sorting of comments
+- timestamping
+- vote number control
+- post font size
+
+
+Where to pick it up?
+- Adding new users
+- "Logging in"
+- Loading a conversation
+- Loading messages in conversation
+
+What I did today?
+Some layout decisions:
+- autofocusing of form now works better by removing the #body alias
+- some fixes in css
+- button changes based on media query
+- log in page somehow
+
+August 1, 2022
+
+What I did today?
+- learned some little things about Promises
+- using some modularization stuff
+- fixed files and stuff
+
+What to do next? Check log from July 31 :)
+
+August 2, 2022
+OK:
+- Adding new users
+- "Logging in"
+?end of OK
+
+SMALL FEATURES:
+- text-overflow
+
+
+What has been my issue with coding?
+- Doing small changes all the time. Tweaking and fixing stuff especially when there is a UI element that seems off or suddenly not working properly. I just can't stop to do it right away. This goes to the next issue of lack of planning. Some days, I write where to start my day, but then, it's not that comprehensive at all. I end up doing the little changes for all my time. I need to apply Parkinson's Law to me. Yesterday , I just had to organize my JavaScript files and start to apply modularization strategies. Some other day, I just had to check my CSS too much, which brings to another issue of difficult CSS management. Not so bad, but maybe if I can be more organized with CSS, it would save me more time. I might even consider using CSS preprocessors.
+
+August 2, 2022
+22:37
+Updates:
+1. Better UI.
+2. Header buttons working.
+3. Messages window (buttons and userflow) working and responsive.
+4. Organized CSS.
+5. Organized and modularized scripts.
+6. Posting, commenting, replying working.
+6. Login page working (login and signin).
+
+Future updates:
+1. Control nesting of comments.
+2. Control number of and sorting of posts (and comments).
+2. Testing for big fonts (overflow and stuff).
+3. Messaging feature.
+4. Posts "feed" somehow (use some API maybe).
+5. Search feature.
+6. Notification feature.
+7. Dark mode?
+
+
+
+
+
