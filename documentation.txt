@@ -222,7 +222,7 @@ SMALL FEATURES:
 
 
 What has been my issue with coding?
-- Doing small changes all the time. Tweaking and fixing stuff especially when there is a UI element that seems off or suddenly not working properly. I just can't stop to do it right away. This goes to the next issue of lack of planning. Some days, I write where to start my day, but then, it's not that comprehensive at all. I end up doing the little changes for all my time. I need to apply Parkinson's Law to me. Yesterday , I just had to organize my JavaScript files and start to apply modularization strategies. Some other day, I just had to check my CSS too much, which brings to another issue of difficult CSS management. Not so bad, but maybe if I can be more organized with CSS, it would save me more time. I might even consider using CSS preprocessors.
+- Doing small changes all the time. Tweaking and fixing stuff especially when there is a UI element that seems off or suddenly not looking correct. I just have to do it right away. I can't simply stop to write it down, and have a dedicated schedule for that. This goes to the next issue of lack of planning. Some days, I write at which part of the project to start my next day, but then, it's not that comprehensive at all. I end up doing the little changes all day. I need to apply Parkinson's Law to me. Yesterday , I just had to organize my JavaScript files and start to apply modularization strategies. Some other day, I just had to check my CSS too much, which brings to another issue of difficult CSS management. Not so bad, but maybe if I can be more organized with CSS, it would save me more time. I might even consider using CSS preprocessors.
 
 August 2, 2022
 22:37
