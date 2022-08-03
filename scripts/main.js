@@ -14,7 +14,7 @@ window.readChildren = readChildren;
 window.createPost = createPost;
 window.addScore = addScore;
 
-// window.addEventListener("beforeunload", updateLocalStorage);
+window.addEventListener("beforeunload", updateLocalStorage);
 
 
 const programFlow = function() {
