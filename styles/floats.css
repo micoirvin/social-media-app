@@ -49,21 +49,17 @@ nav {
     line-height: 0%;
 }
 
-svg {
-    height: 100%;
-}
-
 .light-btn svg path {
     fill: var(--blue500);
 }
 
-nav .avtr.user {
+nav .avtr#current-user-avtr {
     display: none;
 }
 
 @media only screen and (min-width: 25rem) {
-    nav .avtr.user {
-        display: block;
+    nav .avtr#current-user-avtr {
+        display: flex;
     }
 }
 
@@ -84,11 +80,20 @@ nav .avtr.user {
 
 .srch-form .small-btn.light-btn {
     /* background-color: orange; */
+    /* width: 24px;
+    height: 24px; */
+    position: absolute;
+    /* padding: 4px; */
+    right: 8px;
+    /* line-height: 0%;
+    border: 1px solid var(--gray200);
+    border-radius: 8px; */
+}
+
+.float-cntner .small-btn.light-btn {
     width: 24px;
     height: 24px;
-    position: absolute;
-    padding: 6px;
-    right: 8px;
+    padding: 4px;
     line-height: 0%;
     border: 1px solid var(--gray200);
     border-radius: 8px;
@@ -110,6 +115,25 @@ nav .avtr.user {
 
 }
 
+.unfloat.float .srch-form input {
+    width: 100%;
+    display: block;
+}
+
+.unfloat.float .srch-form {
+    width: 100%;
+}
+
+.unfloat.float {
+    border-radius: 0;
+    max-height: none;
+}
+
+@media only screen and (min-width: 39rem) {
+    .unfloat.float {
+        border-radius: 8px;
+    }
+}
 
 /* **************** FLOATS ************************ */
 
@@ -136,6 +160,14 @@ nav .avtr.user {
     padding: 8px 12px;
 }
 
+.float li button {
+    margin-left: auto;
+}
+
+.float h4 {
+    padding: 8px 12px;
+}
+
 .float li a {
     color: var(--gray400);
     display: block;
@@ -148,12 +180,23 @@ nav .avtr.user {
     color: var(--blue500);
 }
 
+li.user {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .float {
     /* display: block; */
     position: absolute;
     top: 58px;
     max-height: 360px;
     max-height: calc(100vh - 100px);
+    overflow-y: auto;
     width: 360px;
     padding: 8px;
     border-radius: 8px;
@@ -167,8 +210,8 @@ nav .avtr.user {
     right: 0;
 }
 
-@media only screen and (min-width: 39rem) and (min-height: 400px) {
-
+.float.unfloat#search .srch-form {
+    margin-bottom: 8px;
 }
 
 /* ************** ACTIVE STATES ******************* */
@@ -178,10 +221,14 @@ nav .avtr.user {
     outline: 1px solid var(--blue500);
 }
 
-.float li:hover {
+.float li:is(:focus, :hover) {
     background-color: var(--gray100);
 }
-
-.light-btn:is(.big-btn, .light-btn):is(:hover) {
+.light-btn:is(.big-btn, .small-btn):is(:focus, :hover) {
+    /* color: var(--blue500); */
     outline: 1px solid var(--blue500);
 }
+
+/* .headr-btn:focus {
+    outline: 1px solid var(--blue500);
+} */

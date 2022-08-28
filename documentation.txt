@@ -233,19 +233,305 @@ Updates:
 4. Organized CSS.
 5. Organized and modularized scripts.
 6. Posting, commenting, replying working.
-6. Login page working (login and signin).
+7. Login page working (login and signin).
 
 Future updates:
 1. Control nesting of comments.
 2. Control number of and sorting of posts (and comments).
-2. Testing for big fonts (overflow and stuff).
-3. Messaging feature.
-4. Posts "feed" somehow (use some API maybe).
-5. Search feature.
-6. Notification feature.
-7. Dark mode?
+3. Testing for big fonts (overflow and stuff).
+4. Messaging feature.
+5. Posts "feed" somehow (use some API maybe).
+6. Search feature.
+7. Notification feature.
+8. Dark mode?
 
 
+August 3, 2022
+Not much today because I had to run an errand.
+
+Updates:
+- Header buttons will now get their svgs from the header.js.
+- Current user image also shows.
+
+Up next:
+- Log out feature.
+- Loading a conversation
+- Loading messages in conversation
+
+August 4, 2022
+Extra feature ideas:
+- Profile page
+
+Bugs:
+- need an event listener on another tab when user is changed.
+- Is threadline displayed in posts and comments?
+
+Updates:
+- Not much. Some minor fixes like getElementById (but ended up reverted to original), `user` css class.
+- Starting to fix some the data structure and methods from adding a conversation. Fixed some css here too.
+- Oh and logout too
+
+August 5, 2022
+Bugs:
+- form needs to work when enter is clicked
+- Disabling active buttons on focused page like messages.html
+- effect of `self` class on normal posts, comments, and replies?
+- score on messages?
+
+What I did today?
+- readPost, createPost for messages
+- reading convo
+
+Up next:
+- need to list convos on side bar
+- limit for readChildren
+- auto-scroll down
+
+August 6, 2022
+Refactor:
+- Can use the `focus` class for header.js
+
+Changes to do:
+- Need more width for a message bubble. Reduce extra space on the grid.
+
+Extra features:
+- Picture collage convo image.
+
+What I did today:
+- Basic scrolling done. Need to find the situations where it should scroll or not.
+- Filling the inbox.
+- Fixed some ids and classes.
+- Messaging is good.
+
+Up next:
+- Scrolling updates
+- Names and stuff need to appear
+- Limit readChildren
+- Contacts
 
 
+August 8, 2022
+Features:
+- sort contacts. Q: when? or where? on data or on html
 
+Bugs:
+ok - Minimized chat is messy when contacts is ON.
+
+Refactors:
+- SVGs for msgs buttons.
+
+What I did today:
+- Scrolling updates
+- Contacts and inbox
+
+Up next:
+ok - "More" button
+ok --- delete, edit
+
+
+August 9, 2022
+What I did today:
+- UI of "more" options
+- triggers
+- some minor fixes
+
+Up next:
+ok - fix the delete modal
+ok - edit button
+
+August 10, 20222
+What I did today:
+- Not much on coding because of proofreading work
+- Fixed the delete things
+
+Up next:
+ok - footr buttons edit buttons.
+ok - fix textarea creation mechanisms. (repeating every click)
+
+August 12, 2022
+
+What I did today:
+- Not much. Okay with editing and deleting posts
+- Minimized chat okay
+- Got some basic algo for Discover People
+
+Up next:
+- Discover People
+- Add people to connections
+- Search unconnected people
+- Populate user list
+- Message new people
+
+August 13, 2022
+Bugs:
+- focus-chat minimized
+ok - msgs-list btn does not remain highlighted on interval refresh
+
+What happened?
+- Not much.
+- Interval refresh of messages inbox and contacts
+- Fixed some posts.js functions to optimize this
+- Add contacts okay
+
+Next:
+- Message people from contacts
+- Search new people
+
+
+August 14, 2022
+Bugs:
+ok - New convo flickers
+not sure - Delays on clicks when interval refresh works
+
+What happened?
+- Messaging person from Contacts
+- Some display stuff
+
+Next:
+- Need to go to inbox when contact is clicked.
+- Updating data when new convo is empty.
+- Other things from August 13
+
+August 15, 2022
+Today:
+- Remove convo if empty
+- Some fixes in algo to keep msgs-list item on focus.
+
+August 16, 2022
+Today:
+- Search button is semi-working.
+- Some fixes for openConvo
+- Optimizations for updates for messages.
+- Includes changes on data ("changed" key)
+- Some fixes for login redirect
+
+August 17, 2022
+Today:
+ ok - Search is better, but there are some wackiness when back button is used (messages back button)
+
+August 18, 2022
+- Had to add something on messages side toggle things as to prevent search results from persisting when a sidebar is triggered
+
+ok - Not working if a user is not a contact
+
+Bugs:
+- Need to integrate some actvFlaotingBox mechanism for header to cause closing when outside is clicked.
+
+Many things okay today. Messaging is pretty much complete
+
+Up next:
+- Just fixing some svgs
+
+August 19, 2022
+- Cramming button texts (delete modal)
+- -- line-height: 0% is the culprit.
+
+Today:
+- Standardized svg
+- Add user button for search
+- toggleChildren to hide or unhide comments
+- Many minor fixes
+- Cancel convo removal
+- 
+
+Up next:
+- individual HTMLs
+- removal of svgs
+- floating
+- user data modal
+
+Aug 21, 2022
+Today and yesterday:
+- Minor changes.
+- Float removal
+- Good changes for easy removal of floating thing
+- Basic date computations
+
+Aug 22, 2022
+Today:
+- Completed relative dates
+- Auto update time on posts
+
+Aug 23, 2022
+
+OWN QUESTIONS ON MY OWN CODE:
+1.) 
+on: elementsOperations.js
+Q: Why the `clear` parameter on getElementById?
+A: For the clearElement on elementsOperations.js
+
+2.)
+on: posts.js (original)
+Q: There’s a problem with lines 88-90 about when a post was already read. Somehow it hinders the merging of editPost and createPost functionalities.
+
+Issue:
+- messages don't scroll down when not activated immediately. OKAY FIXED
+
+Today:
+- Dates are okay. Formats.
+- Many minor fixes.
+- Auto-scrolling fixes.
+- Reviewing my codes.
+- CSS fixes on hover
+
+Aug 24, 2022
+
+Today:
+- Some code review and readme documentation
+
+Pick up at:
+- search.js
+
+Aug 25, 2022
+
+- Click issues on header. OKAY
+
+- issue for openConvo when desktop or mobile mode
+OKAY
+
+- multiple calls to the message date messes up
+OK
+
+- Date() when new convo 52y OK
+
+
+Aug 27, 2022
+
+ID formats:
+
+user.js
+- add-user-{username}
+
+header.js
+- headr-btn-{target}-{f|u|x}
+- search
+- messages
+- notifs
+- options
+- current-user-avtr
+
+login.js
+- user-{username}
+- login
+- signin
+- saved-users
+
+search.js
+- srch-rslt-msgs-btn-cntct-{username}
+- srch-rslt+msgs-btn-cntct-{username}
+- srch-dscvr
+
+messages.js
+- msgs-btn-targ-wndw
+- msgs-btn-targ-main
+- msgs-btn-targ-side
+- msgs-btn-cntct
+- srch-rslt
+- msgs-cntcts
+- msgs-inbox
+
+Aug 28, 2022
+
+Some fixes for the future:
+- remove contents of search input on x button click.
+- handling of caps username?

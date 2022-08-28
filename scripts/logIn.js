@@ -8,6 +8,10 @@ import {
     toggle
 } from "./elementsOperations.js"
 
+import {
+    createUserLi
+} from "./user.js"
+
 const login = function(user) {
     data[`currentUser`] = user;
     updateLocalStorage();
@@ -62,7 +66,8 @@ const loginVerify = function(username, mode) {
         } else {
             return `Username does not exist.`;
         }
-    } else if(mode === `sign-in`) {
+    } 
+    else if(mode === `signin`) {
         if(data[`users`].hasOwnProperty(username)) {
             return `Username is not available.`;
         } else {
@@ -72,7 +77,8 @@ const loginVerify = function(username, mode) {
                     "webp" : ""
                 },
                 "contacts" : [],
-                "convosIds" : []
+                "convosIds" : [],
+                "openConvo" : "new"
             }
             return true;
         }
@@ -80,7 +86,11 @@ const loginVerify = function(username, mode) {
 }
 
 const loginFlow = function(loginOption) {
-    if(typeof loginOption === `undefined` || loginOption === null) return;
+    // loginOption is a `.login-option` element
+    // checkInput -> loginVerify -> login
+    // // checkInput = follows username format?
+    // // loginVerify = If login, does user exist?
+    // // // If signin, can user be created? Yes? Create!
 
     let validUsername = checkInput(loginOption);
     console.log(`validUsername: ${validUsername}`);
@@ -102,41 +112,50 @@ const loginFlow = function(loginOption) {
     }
 }
 
-const fragment = document.createDocumentFragment();
-
-for(let user in data[`users`]) {
-    let li = document.createElement(`li`);
-    li.innerHTML = 
-        `<div class="avtr"><img src="${data["users"][user]["image"]["png"]}"></div>
-        <div class="usrnme">${user}</div>`;
-    li.setAttribute(`id`, `user-${user}`);
-    fragment.appendChild(li);
+const addSomeUsers = function(n) {
+    for(let i = 0; i < n; i++) {
+        loginVerify(`u0` + i, `signin`);
+    }
 }
-getElementById(`users`).appendChild(fragment);
+addSomeUsers(20);
+
+const fetchUsers = function() {
+    const fragment = document.createDocumentFragment();
+    for(let user in data[`users`]) {
+        let li = createUserLi(user);
+        li.setAttribute(`id`, `user-${user}`);
+        fragment.appendChild(li);
+    }
+    getElementById(`saved-users`).querySelector(`ul`).appendChild(fragment);
+}
+fetchUsers();
+
 
 getElementById(`login-box`).addEventListener(`click`, function(e) {
     if(e.target.classList.contains(`big-btn`)) {
         let loginOption = e.target.closest(`.login-option`);
-        loginFlow(loginOption);
+        if(loginOption) {
+            loginFlow(loginOption);
+        }
     }
 
-    let usersList = e.target.closest(`#users`);
-    if(typeof usersList !== undefined && usersList !== null) {
-        let user = e.target.closest(`li`).id.slice(5);
-        login(user);
+    let btn = e.target.closest(`li`);
+    if(btn && getElementById(`saved-users`).contains(btn)) {
+        login(btn.id.slice(5));
     }
 });
 
 
-// Add event listener on keydown
+// Add event listener on keydown Enter
 document.addEventListener('keydown', function(e) {
     let key = e.key;
-
     if(key !== `Enter`) return;
+
     let actvEl = document.activeElement;
     if(typeof actvEl !== `undefined` && actvEl !== null) {
         let loginOption = actvEl.closest(`.login-option`);
-        loginFlow(loginOption);
+        if(loginOption) {
+            loginFlow(loginOption);
+        }
     }
 });
-

@@ -18,38 +18,41 @@
 </head>
 
 <body>
-    <div class="cntner0">
-      <div class="login-cntner">
-        <div id="login-box">
-          <div class="login-option" id="login">
-            <h3>Log in</h3>
-            <input type="text" placeholder="username">
-            <p class="err-msg">User does not exist.</p>
-            <button class="big-btn">Log in</button>
-          </div>
+  <div class="cntner0">
+    <div class="login-cntner">
+      <div id="login-box">
+        <div class="login-option" id="login">
+          <h3>Log in</h3>
+          <input type="text" placeholder="username">
+          <p class="err-msg">User does not exist.</p>
+          <button class="big-btn">Log in</button>
+        </div>
 
-          <div class="login-option" id="sign-in">
-            <h3>Create new account</h3>
-            <input type="text" placeholder="new_username">
-            <p class="err-msg">Username is not available.</p>
-            <button class="big-btn">Create account</button>
-          </div>
+        <div class="login-option" id="signin">
+          <h3>Create new account</h3>
+          <input type="text" placeholder="new_username">
+          <p class="err-msg">Username is not available.</p>
+          <button class="big-btn">Create account</button>
+        </div>
 
-          <div class="login-option" id="saved-users">
-            <h3>Saved users</h3>
-            <p>(developer testing)</p>
-            <ul id="users">
-            </ul>
-          </div>
+        <div class="login-option" id="saved-users">
+          <h3>Saved users</h3>
+          <p>(developer testing)</p>
+          <ul>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="filler">
-      filler
-    </div>
+  <div class="filler">
+  </div>
 
-    <div>Currently nothing here. Please check this page to see the progress: <a href="./scratch2.html" style="text-decoration: underline;">testing UI</a></div>
+  <footer>
+    <p>
+      Project built by <a href="https://micoirvin.com">micoirvin</a>. See my code <a href="https://github.com/micoirvin/social-media-app">here</a>. Read my documentation <a href="https://micoirvin.com/projects-docu/social-media-app-docu.html">here</a>.
+    </p>
+  </footer>
 
   <div class="developer-buttons">
     <button class="small-btn" onclick="refresh()">Refresh</button>
@@ -64,6 +67,8 @@
   <script type="module" src="./scripts/initData.js"></script>
   <script type="module" src="./scripts/getData.js"></script>
   <script type="module" src="./scripts/dataOperations.js"></script>
+  <script type="module" src="./scripts/user.js"></script>
+  <script type="module" src="./scripts/loginRedirect.js"></script>
   <script type="module" src="./scripts/login.js"></script>
 </body>
 </html>

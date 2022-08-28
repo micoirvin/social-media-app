@@ -11,6 +11,7 @@
     top: 0;
     background-color: rgba(0, 0, 0, 0.6);
     display: none;
+    z-index: 3;
 }
 
 .modal {
@@ -51,15 +52,15 @@
     background-color: var(--gray400);
 }
 
-.modal.del .big-btn.no:active{
-    background-color: var(--gray300);
-}
-
 .modal.del .big-btn.yes{
     grid-column: 2;
     background-color: var(--red500);
 }
 
-.modal.del .big-btn.yes:active{
+.modal.del .big-btn.no:is(:focus, :hover){
+    background-color: var(--gray300);
+}
+
+.modal.del .big-btn.yes:is(:focus, :hover){
     background-color: var(--red200);
 }

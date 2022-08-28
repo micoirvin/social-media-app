@@ -42,7 +42,9 @@
 }
 /* OK */
 
-
+.post:not(.cmmnt) {
+    font-size: 1.3rem;
+}
 
 /* **************** POST COMPONENTS ***************** */
 
@@ -50,18 +52,46 @@
     /* background-color: fuchsia; */
     display: flex;
     align-items: center;
-    gap: 8px;
     font-size: 0.9rem;
 }
 /* OK */
 
 
 .post-headr {
+    gap: 8px;
     order: 0;
 }
 
 .post-footr {
     order: 2;
+    gap: 4px;
+}
+
+.post-footr.footr-more-box {
+    margin-left: auto;
+}
+
+.post-footr.footr-more {
+    display: none;
+    /* min-width: 120px; */
+    width: max-content;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    bottom: calc(0.9rem + 16px);
+    z-index: 1;
+    right: 0px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid var(--gray200);
+    padding: 6px 12px;   
+}
+
+.small-btn.more {
+    height: 24px;
+    width: 24px;
+    border-radius: 100px;
+    border: 1px solid var(--gray200);
 }
 
 .post-main {
@@ -91,7 +121,9 @@ span.usrnme-box {
 .usrnme {
     color: var(--gray500);
     font-weight: 500;
-
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 a.user-role {
@@ -100,14 +132,6 @@ a.user-role {
     background-color: var(--blue500);
     color: white;
     border-radius: 2px;
-}
-
-a.user-role:active {
-    background-color: var(--blue200);
-}
-
-a:is(.usrnme, .post-date):active {
-    text-decoration: underline;
 }
 
 span.votes {
@@ -148,11 +172,16 @@ span.score {
     padding: 4px;
     min-width: 20px;
     min-height: 20px;
+    line-height: 100%;
 }
 
-/* .post:not(.form) :is(.big-btn, .small-btn.cncl, textarea) {
-    display: none;
-} */
+.small-btn svg path {
+    fill: var(--blue500);
+}
+
+.small-btn.more {
+    width: 24px;
+}
 
 
 /* ***************** COMMENTS *************** */
@@ -181,11 +210,6 @@ span.score {
 }
 /* OK */
 
-.post.cmmnt :is(.post-headr, .post-footr) {
-    gap: 8px;
-}
-/* OK */
-
 
 .post.cmmnt .avtr {
     position: absolute;
@@ -211,6 +235,7 @@ span.score {
 
 .thread {
     cursor: pointer;
+    display: none;
 }
 
 .thread .thrdln {
@@ -221,7 +246,7 @@ span.score {
     background-color: var(--gray200);
 }
 
-.thread:hover .thrdln {
+.thread:is(:focus, :hover) .thrdln {
     background-color: var(--blue500);
 }
 
@@ -289,8 +314,6 @@ span.score {
 }
 /* OK */
 
-/* For PC, padding: 10px 12px */
-
 .post.form.create .post-footr {
     justify-content: space-between;
 }
@@ -299,6 +322,10 @@ span.score {
 
 
 /* ******* COMMENT FORM ********************** */
+
+.post:not(.form) textarea {
+    display: none;
+}
 
 .post.form.create.cmmnt {
     order: 1;
@@ -363,8 +390,19 @@ span.score {
     font-size: inherit; /*need something*/
 }
 
+.post.form.updt .post-footr.footr-main {
+    display: none;
+}
 
-.post.form.updt :is(span.votes, .small-btn:is(.reply, .more)) {
+.post-footr.footr-updt {
+    display: none;
+}
+
+.post.form.updt .post-footr.footr-updt {
+    display: flex;
+}
+
+.post.form.updt .post-footr.footr-more-box {
     display: none;
 }
 
@@ -373,14 +411,14 @@ span.score {
 } 
 
 
-
 /* ************* OTHERS ************ */
 
 .big-btn {
-    height: 32px;
+    /* height: 32px; */
+    min-height: 32px;
     min-width: 32px;
-    width: fit-content;
-    line-height: 0%;
+    /* width: fit-content; */
+    line-height: 100%;
 }
 
 .big-btn svg {
@@ -396,10 +434,16 @@ span.score {
 .btn-text {
     display: none;
     word-break: normal;
+    white-space: normal;
 }
 
 button {
-    word-break: normal;
+    white-space: normal;
+    word-break: break-word;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -412,76 +456,60 @@ button {
     }
 }
 
-.post:not(.cmmnt) {
-    font-size: 1.3rem;
+
+/* ************ ACTIVE STATES *************** */
+
+a.avtr:is(:focus, :hover) {
+    outline: 1px solid var(--blue500);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 62rem) {
-    .big-btn:hover {
-        background-color: var(--blue200);
-    }
-    
-    a:is(.usrnme, .post-date):hover {
-        text-decoration: underline;
-    }
-
-    a.user-role:hover {
-        background-color: var(--blue200);
-    }
-
-    .vote-btn:hover {
-        color: var(--blue500);
-    }
-
-    .small-btn:hover {
-        color: var(--blue200);
-    }
-
-    .small-btn.del:hover {
-        color: var(--red200);
-    }
-
-    .modal.del .big-btn.no:hover{
-        background-color: var(--gray300);
-    }
-    
-    .modal.del .big-btn.yes:hover{
-        background-color: var(--red200);
-    }
+.big-btn:is(:focus, :hover) {
+    background-color: var(--blue200);
 }
 
+a:is(.usrnme, .post-date):is(:focus, :hover) {
+    text-decoration: underline;
+}
 
+a.user-role:is(:focus, :hover) {
+    background-color: var(--blue200);
+}
 
-/* *********** ACTIVE STATES ************ */
-
-
-.vote-btn:active {
+.vote-btn:is(:focus, :hover) {
     color: var(--blue500);
 }
 
-.small-btn:active {
+.small-btn:is(:focus, :hover) {
     color: var(--blue200);
+}
+
+.small-btn.more:is(:focus, :hover) {
+    outline: 1px solid var(--blue500);
+}
+
+.small-btn.del:is(:focus, :hover) {
+    color: var(--red200);
 }
 
 .post.form textarea:is(:focus, :hover) {
     outline: 1px solid var(--blue500);
 }
 
+/* @media only screen and (hover: none) {
+    @keyframes hover {
+        0% {
+            background-color: var(--hover);
+        }
+        100% {
+            background-color: var(--main);
+        }
+    }
 
-.big-btn:active {
-    background-color: var(--blue200);
-}
-/* OK */
+    .big-btn:not(.light-btn):hover {
+        --main: var(--blue500);
+        --hover: var(--blue200);
+        animation-name: hover;
+        animation-duration: 1s;
+    }
+
+} */

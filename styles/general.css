@@ -39,15 +39,8 @@ body {
     max-width: 100vw;
 }
 
-body * {
-    word-break: break-word;
-}
-
-#body {
-    height: 100vh;
-}
-
 p {
+    word-break: break-word;
     font-family: Lato, Arial, Helvetica, sans-serif;
     line-height: 150%;
 }
@@ -85,7 +78,10 @@ aside {
         width: 30%;
         /* min-height: 100vh; */
         display: block;
-        border: 0.1px dashed gray;
+        background-color: white;
+        border-radius: 8px;
+        height: 300px;
+        /* border: 0.1px dashed gray; */
     }
     
     main {
@@ -139,6 +135,10 @@ svg path {
     width: 100%;
 } */
 
+svg {
+    height: 100%;
+}
+
 .developer-buttons {
     display: none;
     position: fixed;
@@ -160,7 +160,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h3 {
-
     font-size: 1.4rem;
     /* font-size: clamp(1.3rem, 1.3rem + var(--scalerem)*0.2, 1.5rem); */
     font-weight: 500;
@@ -170,5 +169,42 @@ h3 {
 .filler {
     min-height: 300px;
     width: 100%;
-    border: 1px dashed gray;
+    /* vertical-align: bottom; */
+    /* border: 1px dashed gray; */
+}
+
+.time-time {
+    display: none;
+}
+.time-full {
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    background-color: var(--gray200);
+    border-radius: 4px;
+    padding: 4px;
+    max-width: none;
+    width: max-content;
+    z-index: 1;
+    display: none;
+}
+.time-full-full {
+    display: none;
+}
+
+.time:hover .time-full {
+    display: block;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.8rem;
+    line-height: 100%;
+}
+
+footer {
+    text-align: center;
 }

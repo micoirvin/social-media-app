@@ -42,17 +42,7 @@
     outline: 1px solid var(--blue500);
 }
 
-#users li {
-    list-style: none;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-#users li:hover {
+#users li:is(:focus, :hover) {
     background-color: var(--gray100);
 }
 

@@ -1,9 +1,12 @@
 // Not ideal. Only for file-based access.
+
 let initData = 
 {
   "currentUser": null,
 
-  "globalCurrentId": 5,
+  "globalCurrentId": 12,
+
+  "changed": false,
 
   "users": {
     "amyrobson": {
@@ -16,7 +19,8 @@ let initData =
         "ramsesmiron",
         "juliusomo"
       ],
-      "convosIds": ["k8"]
+      "convosIds": ["k5", "k7"],
+      "openConvo": "new"
     },
     "maxblagun": {
       "image": { 
@@ -26,7 +30,8 @@ let initData =
       "contacts": [
         "amyrobson"
       ],
-      "convosIds": ["k8"]
+      "convosIds": ["k7"],
+      "openConvo": "new"
     },
     "ramsesmiron": {
       "image": { 
@@ -34,7 +39,8 @@ let initData =
         "webp": "./images/avatars/image-ramsesmiron.webp"
       },
       "contacts": [],
-      "convosIds": []
+      "convosIds": [],
+      "openConvo": "new"
     },
     "juliusomo": {
       "image": { 
@@ -42,21 +48,72 @@ let initData =
         "webp": "./images/avatars/image-juliusomo.webp"
       },
       "contacts": [],
-      "convosIds": ["k8"]
+      "convosIds": ["k5"],
+      "openConvo": "new"
     }
   },
 
 
   "messages": {
-    "k8": {
+    "x1": {
+      "childrenIds": ["k5", "k7"]
+    },
+    "k5": {
+      "convoName": null,
+      "convoImage": {
+        "png": null,
+        "webp": null
+      },
+      "parentId": "x1",
       "users": ["amyrobson", "juliusomo"],
-      "childrenIds": []
+      "childrenIds": ["m6"]
+      
+    },
+    "m6": {
+      "parentId": "k5",
+      "content": "This is m6.",
+      "createdAt": "July 22, 2022 11:13:03",
+      "user": "amyrobson"
+      
+    },
+    "k7": {
+      "convoName": null,
+      "convoImage": {
+        "png": null,
+        "webp": null
+      },
+      "parentId": "x1",
+      "users": ["amyrobson", "maxblagun"],
+      "childrenIds": ["m8", "m9", "m10", "m11"]
+      
+    },
+    "m8": {
+      "parentId": "k7",
+      "content": "This is m8.",
+      "createdAt": "July 22, 2021 11:18:03",
+      "user": "amyrobson"
+      
     },
     "m9": {
-      "parentId": "k8",
+      "parentId": "k7",
       "content": "This is m9.",
-      "createdAt": "1 month ago",
-      "user": "amyrobson"
+      "createdAt": "August 25, 2021 20:20:03",
+      "user": "maxblagun"
+      
+    },
+    "m10": {
+      "parentId": "k7",
+      "content": "This is m10.",
+      "createdAt": "January 25, 2022 10:20:03",
+      "user": "maxblagun"
+      
+    },
+    "m11": {
+      "parentId": "k7",
+      "content": "Hello from m11",
+      "createdAt": "January 25, 2022 10:25:03",
+      "user": "maxblagun"
+      
     }
 
   },
@@ -67,43 +124,48 @@ let initData =
     },
     "p0": {
       "parentId": "x0",
-      "content": "This is post0. Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
-      "createdAt": "1 month ago",
+      "content": "Hello dev community! Let me share my latest project. I believe I've become a better developer because of the many challenges and learning opportunities this project gave me. Please see my code repository and documentation below.",
+      "createdAt": "February 25, 2022 11:29:03",
       "score": 12,
       "user": "amyrobson",
       "childrenIds": ["c1", "c2"]
+      
     }, 
     "c1": {
       "parentId": "p0",
       "content": "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
-      "createdAt": "1 month ago",
+      "createdAt": "February 26, 2022 11:29:03",
       "score": 12,
       "user": "amyrobson",
       "childrenIds": []
+      
     },
     "r3": {
       "parentId": "c2",
       "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-      "createdAt": "1 week ago",
+      "createdAt": "July 26, 2022 11:29:03",
       "score": 4,
       "user":  "ramsesmiron",
       "childrenIds": []
+      
     },
     "c2": {
       "parentId": "p0",
       "content": "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
-      "createdAt": "2 weeks ago",
+      "createdAt": "April 26, 2022 11:29:03",
       "score": 5,
       "user": "maxblagun",
       "childrenIds": ["r3", "r4"]
+      
     },
     "r4": {
       "parentId": "c2", 
       "content": "I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
-      "createdAt": "2 days ago",
+      "createdAt": "July 27, 2022 11:29:03",
       "score": 2,
       "user": "juliusomo",
       "childrenIds": []
+
     }
   }
 }

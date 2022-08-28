@@ -1,8 +1,10 @@
 import {
-    readChildren,
-    createPost,
-    addScore
+    readChildren
 } from "./posts.js";
+
+import {
+    messagesProgramFlow
+} from "./messages.js"
 
 import {
     data,
@@ -10,12 +12,11 @@ import {
     clearLocalStorage
 } from "./dataOperations.js";
 
-window.readChildren = readChildren;
-window.createPost = createPost;
-window.addScore = addScore;
+import { getElementById, memoizedElements } from "./elementsOperations.js";
 
-window.addEventListener("beforeunload", updateLocalStorage);
+// window.addEventListener("beforeunload", updateLocalStorage);
 
+console.log(data);
 
 const programFlow = function() {
     if(data[`currentUser`] === null) {
@@ -24,9 +25,21 @@ const programFlow = function() {
         readChildren(`x0`);
     }
 }
-programFlow();
+
+if(typeof getElementById(`x0`) !== `undefined` && getElementById(`x0`) !== null) {
+    programFlow();
+}
+
+setInterval(function() {
+    if(data[`changed`]) {
+        // console.log(`changed`);
+        messagesProgramFlow();
+        data[`changed`] = false;
+    }
+}, 1000);
 
 
+console.log(memoizedElements);
 
 // console.log(JSON.stringify(data).length); // 2016 characters <- current chars used
 // let currentSize = JSON.stringify(data).length*16/8/2**10; // 3.9375 kB <- current size used
