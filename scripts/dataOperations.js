@@ -14,12 +14,12 @@ const clearLocalStorage = function() {
     data = null;
 }
 
-const currentValidDate = "August 28, 2022 16:22:00";
+const currentValidDate = "August 28, 2022 17:02:00";
 
 const validateData = function() {
     if(!data.hasOwnProperty(`valid`) || data[`valid`] !== currentValidDate) {
         clearLocalStorage();
-        location.reload();
+        window.location = window.location.href+'?eraseCache=true';
     }
 }
 validateData();
