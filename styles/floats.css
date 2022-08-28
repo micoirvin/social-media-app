@@ -210,7 +210,7 @@ li.user {
     right: 0;
 }
 
-.float.unfloat#search .srch-form {
+.unfloat.float#search .srch-form {
     margin-bottom: 8px;
 }
 

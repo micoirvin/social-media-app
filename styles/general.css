@@ -141,6 +141,8 @@ svg {
 
 .developer-buttons {
     display: none;
+    font-size: 0.8rem;
+    width: 300px;
     position: fixed;
     z-index: 1000000;
     background-color: white;

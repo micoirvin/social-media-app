@@ -9,10 +9,23 @@ const updateLocalStorage = function() {
 }
  
 const clearLocalStorage = function() {
-    localStorage.removeItem(`data-intrctv-cmmnts-by-mico-irvin`);
+    localStorage.removeItem(`data-social-media-app-by-mico-irvin`);
     for (let k in data) delete data[k];
     data = null;
 }
+
+const currentValidDate = "August 28, 2022 16:22:00";
+
+const validateData = function() {
+    if(!data.hasOwnProperty(`valid`) || data[`valid`] !== currentValidDate) {
+        clearLocalStorage();
+        location.reload();
+    }
+}
+validateData();
+
+
+
 
 export {
     data,

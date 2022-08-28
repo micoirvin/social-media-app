@@ -8,6 +8,8 @@ let initData =
 
   "changed": false,
 
+  "valid": "August 28, 2022 16:22:00",
+
   "users": {
     "amyrobson": {
       "image": { 
