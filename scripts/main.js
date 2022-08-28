@@ -14,7 +14,7 @@ import {
 
 import { getElementById, memoizedElements } from "./elementsOperations.js";
 
-// window.addEventListener("beforeunload", updateLocalStorage);
+window.addEventListener("beforeunload", updateLocalStorage);
 
 console.log(data);
 
