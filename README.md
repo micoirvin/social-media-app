@@ -2,6 +2,8 @@
 
 This is my biggest project yet, built on Vanilla JavaScript, HTML, and CSS. I want to exhibit how strong my foundations are in front-end web development through this project. There are many aspects and features of this project that challenged my problem-solving skills and creativity.
 
+You can see the code [here](https://github.com/micoirvin/social-media-app) and the live project [here](https://micoirvin.com/projects/social-media-app/)</a>.
+
 As the title goes, this project is a social media app with features like posting, messaging, search, and login. This is a front-end project, so the "database" is the browser's local storage only. Data are persistent upon closing the browser, but on that browser only.
 
 This project was inspired by my [interactive comments section project](https://micoirvin.com/projects/interactive-comments-section/), repository [here](https://github.com/micoirvin/interactive-comments-section). I built that challenge from FrontendMentor, and from the beginning, I wanted to extend the comments section into posts and messages and a full social media app.
