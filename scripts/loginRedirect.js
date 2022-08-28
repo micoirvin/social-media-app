@@ -15,6 +15,6 @@ if(data[`currentUser`] === null) {
   }
 } else {
   if(location.slice(x-5, x) === `login`) {
-    getElementById(`login-box`).innerHTML = `Cannot access login.`;
+    getElementById(`login-box`).innerHTML = `<p>Cannot access login. Go to <a href="./">home</a>.</p>`;
   }
 }
