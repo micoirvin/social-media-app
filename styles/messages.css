@@ -23,6 +23,7 @@
     bottom: 0;
     right: 20px;
     border-radius: 8px 8px 0px 0px;
+    overflow: visible;
 }
 
 .unfloat.float#messages {
